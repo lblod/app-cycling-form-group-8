@@ -1,0 +1,5 @@
+{
+  "monitoredJobTypes": [
+    "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies"
+  ]
+}

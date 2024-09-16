@@ -1,0 +1,307 @@
+version: "3.7"
+
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  frontend:
+    image: lblod/frontend-subsidiepunt:1.4.0
+    links:
+      - identifier:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  dashboard:
+    image: lblod/frontend-dashboard:1.6.0
+    environment:
+      EMBER_LOGIN_ROUTE: "mock-login"
+    links:
+      - identifier:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  identifier:
+    image: semtech/mu-identifier:1.10.1
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  dispatcher:
+    image: semtech/mu-dispatcher:2.1.0-beta.2
+    volumes:
+      - ./config/dispatcher:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  deltanotifier:
+    image: cecemel/delta-notifier:0.2.0-beta.2
+    volumes:
+      - ./config/delta:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  database:
+    image: semtech/mu-authorization:feature-service-roam-r1.1
+    environment:
+      MU_SPARQL_ENDPOINT: "http://virtuoso:8890/sparql"
+      DATABASE_OVERLOAD_RECOVERY: "true"
+      DATABASE_COMPATIBILITY: "Virtuoso"
+      # Note: not sure wether it gets picked up properly, it is meant for healing-process which may make
+      # heavy queries
+      QUERY_MAX_PROCESSING_TIME: 605000
+      QUERY_MAX_EXECUTION_TIME: 605000
+    volumes:
+      - ./config/authorization:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  virtuoso:
+    image: redpencil/virtuoso:1.2.0-rc.1
+    environment:
+      SPARQL_UPDATE: "true"
+      DEFAULT_GRAPH: "http://mu.semte.ch/application"
+    volumes:
+      - ./data/db:/data
+      - ./config/virtuoso/virtuoso.ini:/data/virtuoso.ini # Note: on production override this setting
+      - ./config/virtuoso/:/opt/virtuoso-scripts
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  migrations:
+    image: semtech/mu-migrations-service:0.6.0
+    links:
+      - virtuoso:database
+    environment:
+      MU_SPARQL_TIMEOUT: "300"
+    volumes:
+      - ./config/migrations:/data/migrations
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  cache:
+    image: semtech/mu-cache:2.0.1
+    links:
+      - resource:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  resource:
+    image: semtech/mu-cl-resources:feature-differently-stable-luckless
+    environment:
+      CACHE_CLEAR_PATH: "http://cache/.mu/clear-keys"
+    volumes:
+      - ./config/resources:/config
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  db-cleanup:
+    image: lblod/db-cleanup-service:0.5.0
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  login:
+    image: lblod/acmidm-login-service:0.12.0-verenigingen-rc.7
+    environment:
+      MU_APPLICATION_AUTH_DISCOVERY_URL: "https://authenticatie-ti.vlaanderen.be/op"
+      MU_APPLICATION_AUTH_CLIENT_ID: "a2c0d6ea-01b4-4f68-920b-10834a943c27"
+      MU_APPLICATION_AUTH_REDIRECT_URI: "https://loket.lblod.info/authorization/callback"
+      MU_APPLICATION_AUTH_CLIENT_SECRET: "secret"
+      LOG_SINK_URL: "http://sink"
+      ORGANIZATION_TYPE: "http://www.w3.org/ns/org#Organization"
+      GROUP_TYPE_LABEL: "organizations"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  sink:
+    image: nginx:1.15.2
+    volumes:
+      - ./config/sink/sink.conf:/etc/nginx/conf.d/default.conf
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  file:
+    image: cecemel/file-service:3.3.0
+    volumes:
+      - ./data/files:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  deliver-email-service:
+    image: redpencil/deliver-email-service:0.2.0
+    environment:
+      MAILBOX_URI: "http://data.lblod.info/id/mailboxes/1"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  report-generation:
+    image: lblod/loket-report-generation-service:0.6.5
+    volumes:
+      - ./data/files:/share
+      - ./config/reports/:/config/
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  subsidy-applications-management:
+    image: lblod/subsidy-applications-management-service:0.11.0
+    environment:
+      # “At every 15th minute past every hour from 8 through 18 on every day-of-week from Monday through Friday.”
+      META_DATA_CRON: "0 */15 8-18 * * 1-5"
+      MAX_BODY_SIZE: "10000kb"
+    volumes:
+      - ./config/subsidy-application-management:/config
+      - ./data/files/subsidies:/data
+      - ./data/files:/share
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  case-number-generator:
+    image: lblod/case-number-service:2.0.0
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  subsidy-application-flow-management:
+    image: lblod/subsidy-application-flow-management-service:0.3.0
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  jobs-controller:
+    image: lblod/job-controller-service:1.0.1
+    volumes:
+      - ./config/jobs-controller/:/config/
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  error-alert:
+    image: lblod/loket-error-alert-service:1.0.0
+    volumes:
+      - ./config/error-alert:/config/
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  ################################################################################
+  # DELTA GENERAL
+  ################################################################################
+  publication-triplestore:
+    image: redpencil/virtuoso:1.2.0-rc.1
+    environment:
+      SPARQL_UPDATE: "true"
+      DEFAULT_GRAPH: "http://mu.semte.ch/application"
+    volumes:
+      - ./data/publication-triplestore:/data
+      - ./config/publication-triple-store/virtuoso.ini:/data/virtuoso.ini
+      - ./config/publication-triple-store/:/opt/virtuoso-scripts
+    restart: always
+    logging: *default-logging
+  delta-producer-report-generator:
+    image: lblod/delta-producer-report-generator:0.4.0
+    volumes:
+      - ./config/delta-producer/report-generator:/config
+    environment:
+      EMAIL_FROM: "noreply@lblod.info"
+      EMAIL_TO: "support+lblod@redpencil.io"
+      APP_NAME: "app-digitaal-loket-dev"
+      OUTBOX: "http://data.lblod.info/id/mail-folders/2"
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-dump-file-publisher:
+    image: lblod/delta-producer-dump-file-publisher:0.10.3
+    environment:
+      EXPORT_TTL_BATCH_SIZE: 20
+      MAX_SUBJECT_COUNT: 1000000
+    volumes:
+      - ./config/delta-producer/dump-file-publisher:/config
+      - ./data/files:/share
+    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)
+    #    labels:
+    #      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-files-share:
+    image: redpencil/file-share-sync:0.0.5
+    volumes:
+      - ./data/files:/share
+    environment:
+      ALLOW_SUPER_CONSUMER: "true"
+      ALLOWED_ACCOUNTS: "http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
+    restart: always
+    logging: *default-logging
+  ################################################################################
+  # DELTA SUBSIDIES: START
+  ################################################################################
+  delta-producer-background-jobs-initiator-subsidies:
+    image: lblod/delta-producer-background-jobs-initiator:0.3.1
+    environment:
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      DUMP_FILE_CREATION_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/deltaDumpFileCreation/subsidies"
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies"
+      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies"
+      CRON_PATTERN_DUMP_JOB: "0 0 5 * * 6" # weekly on saturday
+      CRON_PATTERN_HEALING_JOB: "0 0 4 * * *" # everyday at 4 AM
+      START_INITIAL_SYNC: "false" # prefer to disable it now. We want to have feeling with how the DB acts.
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
+  delta-producer-publication-graph-maintainer-subsidies:
+    image: lblod/delta-producer-publication-graph-maintainer:0.15.1
+    environment:
+      MAX_BODY_SIZE: "50mb"
+      JOBS_GRAPH: "http://mu.semte.ch/graphs/organizations/141d9d6b-54af-4d17-b313-8d1c30bc3f5b/LoketAdmin"
+      RELATIVE_FILE_PATH: "deltas/subsidies"
+      PUBLICATION_GRAPH: "http://redpencil.data.gift/id/deltas/producer/loket-subsidies"
+      HEALING_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/healingOperation/subsidies"
+      INITIAL_PUBLICATION_GRAPH_SYNC_JOB_OPERATION: "http://redpencil.data.gift/id/jobs/concept/JobOperation/deltas/initialPublicationGraphSyncing/subsidies"
+      QUEUE_POLL_INTERVAL: 3000
+      USE_VIRTUOSO_FOR_EXPENSIVE_SELECTS: "true" # some queries are just too expensive
+      SKIP_MU_AUTH_INITIAL_SYNC: "true"
+      HEALING_PATCH_GRAPH_BATCH_SIZE: 500
+      UPDATE_PUBLICATION_GRAPH_SLEEP: 200
+      SERVE_DELTA_FILES: "true"
+      DELTA_INTERVAL_MS: 10000
+      PRETTY_PRINT_DIFF_JSON: "true"
+      PUBLICATION_VIRTUOSO_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      PUBLICATION_MU_AUTH_ENDPOINT: "http://publication-triplestore:8890/sparql"
+      SUDO_QUERY_RETRY_FOR_HTTP_STATUS_CODES: "404"
+      PUBLISHER_URI: "http://data.lblod.info/services/delta-producer-publication-graph-maintainer-subsidies"
+      FILES_GRAPH: "http://redpencil.data.gift/id/deltas/producer/subsidies-deltas"
+      ACCOUNT: "http://data.lblod.info/foaf/account/id/4171b7a5-a4d6-42d0-bf37-f97b135fb885"
+    volumes:
+      - ./config/delta-producer/subsidies:/config
+      - ./data/files/:/share
+    # Temporary disable to no saturate the app-http-logger (should be fixed in a next version)<
+    #    labels:
+    #      - "logging=true"
+    restart: always
+    logging: *default-logging
+  ################################################################################
+  # DELTA SUBSIDIES: END
+  ################################################################################
+
+  ################################################################################
+  # DELTA CONSUMERS
+  ################################################################################
