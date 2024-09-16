@@ -1,11 +1,5 @@
 version: '3.7'
 services:
-  proxy:
-    image: nginx:1.13
-    volumes:
-      - ./config/proxy:/etc/nginx/conf.d
-    ports:
-      - "443:443"
   mocklogin:
     image: lblod/mock-login-service:0.7.0
     environment:
@@ -38,34 +32,11 @@ services:
     restart: "no"
   resource:
     restart: "no"
-  db-cleanup:
-    restart: "no"
-  login:
-    restart: "no"
   file:
-    restart: "no"
-  deliver-email-service:
-    restart: "no"
-  report-generation:
     restart: "no"
   subsidy-applications-management:
     environment:
       VERSIONED_CONFIGURATION_WATCHER: null
     restart: "no"
-  case-number-generator:
-    restart: "no"
   subsidy-application-flow-management:
-    restart: "no"
-  publication-triplestore:
-    restart: "no"
-    ports:
-      - "8891:8890"
-  delta-producer-report-generator:
-    restart: "no"
-  delta-producer-dump-file-publisher:
-    restart: "no"
-  error-alert:
-    environment:
-      EMAIL_FROM: "Subsidiepunt Local <subsidiepunt-development@redpencil.io>"
-      EMAIL_TO: "subsidiepunt-development@redpencil.io"
     restart: "no"
