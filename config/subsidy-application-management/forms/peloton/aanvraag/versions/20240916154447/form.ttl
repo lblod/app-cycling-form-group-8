@@ -59,13 +59,13 @@ nodes:938f372b-25a9-474c-b392-4768f2b6bb28
 
 nodes:26a989c2-701e-442a-9e9e-ba27460c8fea
 	 a form:Section;
-  form:help "Vul hier de bevoorradingszones in waarvoor toestemming wordt gevraagd om te voorzien"
+  form:help "Vul hier de bevoorradingszones in waarvoor toestemming wordt gevraagd om te voorzien";
 	sh:name "Bevoorradingszone";
 	sh:order 11 .
 
 nodes:8eb00a35-a69b-4826-84ac-f938032e88b0
 	 a form:Section;
-  form:help "Vul hier de wegwerpzones in waarvoor toestemming wordt gevraagd om te voorzien"
+  form:help "Vul hier de wegwerpzones in waarvoor toestemming wordt gevraagd om te voorzien";
 	sh:name "Wegwerpzone";
 	sh:order 12 .
 
@@ -641,55 +641,57 @@ nodes:f2baa43c-9741-49c6-93c9-ce68f8a7ae6f
 
 #	Wegwerpzones nodes:8eb00a35-a69b-4826-84ac-f938032e88b0
 
-nodes:daf464ab-de1e-4440-8478-b219dc7f10a8
+nodes:8518cf34-0099-4c21-9a8a-6c12c1e42ee7
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
-	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
-	sh:name "Begin bevoorradingszone";
+	form:partOf nodes:8eb00a35-a69b-4826-84ac-f938032e88b0;
+	sh:name "Begin wegwerpzone";
 	sh:order 1;
 	sh:path nodes:6f5b0c21-15e3-4fb9-b3e1-5907062d0ee4 .
 
-nodes:5f58d7b4-86f8-4b52-aff1-9591c3bd422c
+nodes:8e27b2e7-3e76-4b70-a2e2-1784b3a3929e
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
-	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
-	sh:name "Einde bevoorradingszone";
+	form:partOf nodes:8eb00a35-a69b-4826-84ac-f938032e88b0;
+	sh:name "Einde wegwerpzone";
 	sh:order 2;
 	sh:path nodes:c00cf9d0-8fca-403a-b824-e59fcfe9f535 .
 
-nodes:8840a994-fd8a-4933-bddd-99b3dcc73efb
+nodes:038a3b6d-7ad7-4ca7-8479-7c20f81ff51f
 	 a form:Generator;
-	form:prototype nodes:f2baa43c-9741-49c6-93c9-ce68f8a7ae6f.
+	form:prototype nodes:fcfeb454-f911-48d4-893c-13f111bb31df.
 
 
-nodes:a8277ebb-38c7-4e41-9388-6642e9a485ec
+nodes:564d2011-b2e2-4cf5-8823-bd65025e79e8
 	 a form:Scope;
 	sh:path nodes:065f1d7f-8ddc-482a-96d0-607be9336a06 .
 
-nodes:b71e037c-7e51-41ea-97f4-e9d34f0b327d
+nodes:62bfebb3-88c7-451f-a43a-93d07bcc3dbd
 	 a form:Listing,
 	form:ListingTable;
-	form:addLabel "Voeg een bevoorradingszone toe";
+	form:addLabel "Voeg een wegwerpzone toe";
 	form:canAdd true;
 	form:canRemove true;
-	form:createGenerator nodes:8840a994-fd8a-4933-bddd-99b3dcc73efb;
-	form:each nodes:c4f530f3-b7d7-41cb-8bae-26ef13f42101;
-	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
-	form:scope nodes:a8277ebb-38c7-4e41-9388-6642e9a485ec;
+	form:createGenerator nodes:038a3b6d-7ad7-4ca7-8479-7c20f81ff51f;
+	form:each nodes:907125e6-d2c6-470b-9f66-2abb7a348006;
+	form:partOf nodes:8eb00a35-a69b-4826-84ac-f938032e88b0;
+	form:scope nodes:564d2011-b2e2-4cf5-8823-bd65025e79e8;
 	sh:name "Eenvoudige tabel";
 	sh:order 1 .
 
-nodes:c4f530f3-b7d7-41cb-8bae-26ef13f42101
+nodes:907125e6-d2c6-470b-9f66-2abb7a348006
 	 a form:SubForm;
-	form:includes nodes:5f58d7b4-86f8-4b52-aff1-9591c3bd422c, nodes:daf464ab-de1e-4440-8478-b219dc7f10a8;
-	form:removeLabel "Verwijder een bevoorradingszone";
+	form:includes nodes:8e27b2e7-3e76-4b70-a2e2-1784b3a3929e, nodes:8518cf34-0099-4c21-9a8a-6c12c1e42ee7;
+	form:removeLabel "Verwijder een wegwerpzone";
 	sh:name "The subform title".
 
-nodes:c55e8760-8216-4d99-a235-260ea1a75a4d
+nodes:dcb6fe0c-53a6-43c4-9afc-a094cb696a6b
 	 a form:Field.
 
-nodes:f2baa43c-9741-49c6-93c9-ce68f8a7ae6f
-	form:shape nodes:c55e8760-8216-4d99-a235-260ea1a75a4d.
+nodes:fcfeb454-f911-48d4-893c-13f111bb31df
+	form:shape nodes:dcb6fe0c-53a6-43c4-9afc-a094cb696a6b.
+
+#####################################################
 
 #####################################################
 
