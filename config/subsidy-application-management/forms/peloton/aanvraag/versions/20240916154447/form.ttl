@@ -180,13 +180,6 @@ nodes:24289e48-258f-4919-8c3e-5783a6acb4a4
 	sh:order 3;
 	sh:path nodes:e61f56db-6346-4a61-a75e-33e091789e40 .
 
-nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec
-	 a form:Field;
-	form:displayType displayTypes:defaultInput;
-	sh:name "Vermoedelijk aankomstuur";
-	sh:order 20;
-	sh:path nodes:19b48e50-14d7-4191-ac2a-2414a932d89a.
-
 nodes:294a1526-879d-41ff-8fc2-9638bd48b636
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
@@ -202,7 +195,6 @@ nodes:350b24e9-8da4-4b6c-bc00-eabb7a46f25f
 	form:partOf nodes:7fa3d672-47ef-4a51-b996-873023225f38;
 	sh:name "Op het parcours wordt er een afleidingstraject voorgesteld, langs de volgende straten";
 	sh:order 3;
-
 	sh:path nodes:5df44b79-5804-40c8-9d01-6a8b5a903016 .
 
 nodes:38772c84-f746-4035-a449-0749e34a27b3
@@ -661,7 +653,6 @@ nodes:038a3b6d-7ad7-4ca7-8479-7c20f81ff51f
 	 a form:Generator;
 	form:prototype nodes:fcfeb454-f911-48d4-893c-13f111bb31df.
 
-
 nodes:564d2011-b2e2-4cf5-8823-bd65025e79e8
 	 a form:Scope;
 	sh:path nodes:065f1d7f-8ddc-482a-96d0-607be9336a06 .
@@ -692,6 +683,136 @@ nodes:fcfeb454-f911-48d4-893c-13f111bb31df
 	form:shape nodes:dcb6fe0c-53a6-43c4-9afc-a094cb696a6b.
 
 #####################################################
+
+# Bepijling nodes:b1133ef5-20aa-4e2a-a116-b8bf26cd1c5a
+
+nodes:bf391124-a4c2-4c4e-a86b-b2b84b9a54c5
+	 a form:Field;
+	form:displayType displayTypes:date;
+	form:partOf nodes:b1133ef5-20aa-4e2a-a116-b8bf26cd1c5a;
+	sh:name "De organisatie zorgt voor bepijling vanaf";
+	sh:order 46;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:0932c906-6289-4522-855c-dcda49608557
+	 a form:Field;
+	form:displayType displayTypes:date;
+	form:partOf nodes:b1133ef5-20aa-4e2a-a116-b8bf26cd1c5a;
+	sh:name "Deze pijlen zullen verwijderd worden op uiterlijk ";
+	sh:order 47;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+#####################################################
+
+# Doortochten op overwegen (tijdens de duur van de wedstrijd) nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf
+
+nodes:2ba35dc3-d7f1-47fd-8b47-028336edec44
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf;
+	sh:name "Nummer overweg";
+	sh:order 2;
+	sh:path nodes:c00cf9d0-8fca-403a-b824-e59fcfe9f535 .
+
+nodes:93942be5-8675-4a06-8e5e-67b394c96e2d
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf;
+	sh:name "Gemeente";
+	sh:order 3;
+	sh:path nodes:22155db9-ecfb-4972-943b-a5c4e8cd0504 .
+
+nodes:c18000f4-04b9-44ba-9808-63143f813665
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf;
+	sh:name "Straatnaam";
+	sh:order 4;
+	sh:path nodes:9a736644-0aea-4fd3-a15b-d9fe797af60d.
+
+nodes:32a57b0d-07f2-4c73-a8dc-084b42030b04
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf;
+	sh:name "Doorkomstuur (wedstrijd)";
+	sh:order 5;
+	sh:path nodes:950a72aa-4c72-433a-bca4-bc4e1a2d93c0 .
+
+nodes:3f2ce6fe-e48a-4e1d-9b91-4e185bd0f13c
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf;
+	sh:name "Voorziene doorkomstuur (trein)";
+	sh:order 6;
+	sh:path nodes:b74ef75f-91d3-45a8-a681-45cf0c35503a.
+
+nodes:c252b034-7748-4866-b700-c1e228931d4f
+	 a form:Generator;
+	form:prototype nodes:a2e99c55-a198-47f6-8903-dbd30cb34c5d.
+
+nodes:7fed7e23-9ee5-4a2e-b1a0-a1dd1cad2e61
+	 a form:Scope;
+	sh:path nodes:065f1d7f-8ddc-482a-96d0-607be9336a06 .
+
+nodes:2a132a4e-4cf4-4cc8-b297-ff17f802e943
+	 a form:Listing,
+	form:ListingTable;
+	form:addLabel "Voeg doortocht op overweg toe";
+	form:canAdd true;
+	form:canRemove true;
+	form:createGenerator nodes:c252b034-7748-4866-b700-c1e228931d4f;
+	form:each nodes:2f148428-f7e8-4f7b-992a-778b09028db4;
+	form:partOf nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf;
+	form:scope nodes:7fed7e23-9ee5-4a2e-b1a0-a1dd1cad2e61;
+	sh:name "Eenvoudige tabel";
+	sh:order 1 .
+
+nodes:2f148428-f7e8-4f7b-992a-778b09028db4
+	 a form:SubForm;
+	form:includes nodes:32a57b0d-07f2-4c73-a8dc-084b42030b04,	nodes:3f2ce6fe-e48a-4e1d-9b91-4e185bd0f13c, nodes:2ba35dc3-d7f1-47fd-8b47-028336edec44, nodes:93942be5-8675-4a06-8e5e-67b394c96e2d, nodes:c18000f4-04b9-44ba-9808-63143f813665, nodes:6b720ee5-5864-446e-8fbb-3a28f582af9a;
+	form:removeLabel "Verwijder doortocht op overweg";
+	sh:name "The subform title".
+
+nodes:e75d45c6-bb27-4435-be43-bd5f4090e9a8
+	 a form:Field.
+
+nodes:6b720ee5-5864-446e-8fbb-3a28f582af9a
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf;
+	sh:name "afstand (km)";
+	sh:order 1;
+	sh:path nodes:6f5b0c21-15e3-4fb9-b3e1-5907062d0ee4 .
+
+nodes:a2e99c55-a198-47f6-8903-dbd30cb34c5d
+	form:shape nodes:e75d45c6-bb27-4435-be43-bd5f4090e9a8.
+
+#####################################################
+
+# Doortochten over beweegbare bruggen (tijdens de wedstrijd) nodes:c11dda57-c224-4698-abd5-d1115ca240bf
+
+nodes:a9dc902c-8b80-4600-8bbd-5ddd1837b6d3
+	 a form:Field;
+	form:displayType displayTypes:textArea;
+	form:help "Vul de beweegbare bruggen in gescheiden met een komma";
+	form:partOf nodes:c11dda57-c224-4698-abd5-d1115ca240bf;
+	sh:name "Doortochten over beweegbare bruggen";
+	sh:order 48;
+	sh:path nodes:5df44b79-5804-40c8-9d01-6a8b5a903016 .
+
+#####################################################
+
+#####################################################
+
+# Volgbewijzen / samenstelling wedstrijdkaravaan nodes:f8f94a7c-28e1-4539-9c7f-25f1b050bfa7
+
+nodes:e363ff9c-33e0-4aa4-b5f5-426786d5313f
+	 a form:Field;
+	form:displayType displayTypes:numericalInput;
+	form:partOf nodes:f8f94a7c-28e1-4539-9c7f-25f1b050bfa7;
+	sh:name "Aantal voertuigen waarvoor de koersdirecteur voornemens is volgbewijzen af te leveren";
+	sh:order 48;
+	sh:path nodes:5df44b79-5804-40c8-9d01-6a8b5a903016 .
 
 #####################################################
 
@@ -783,7 +904,7 @@ nodes:ee1971f2-136b-4759-b556-abfab3f1743d
 	form:each nodes:14d0162a-e8b9-4a76-94a8-fac9298f110d;
 	form:partOf nodes:7eccc7c5-fea6-4ad9-b805-39dd7be2e6dc;
 	form:scope nodes:38772c84-f746-4035-a449-0749e34a27b3;
-	sh:order 1 .
+	sh:order 2 .
 
 nodes:f6c81dda-e179-47c5-894d-4613d0b1e9bc
 	 a form:Field;
@@ -791,7 +912,7 @@ nodes:f6c81dda-e179-47c5-894d-4613d0b1e9bc
 	form:help "In kilometer";
 	form:partOf nodes:7eccc7c5-fea6-4ad9-b805-39dd7be2e6dc;
 	sh:name "Totale afstand van de wedstrijd";
-	sh:order 29;
+	sh:order 1;
 	sh:path nodes:d3a11c4f-e70c-406d-a9c9-21d14252717f.
 
 nodes:f976335c-ca25-4ad3-b910-a2f24160bb68
@@ -810,11 +931,18 @@ nodes:fd835e03-b0e6-4299-9c8e-01bd4d527568
 	sh:order 19;
 	sh:path nodes:62adc08a-54df-4786-b7d8-7a0fb3474654 .
 
+nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+  form:partOf nodes:f93a8e9b-1431-4493-973b-1981574d1b90;
+	sh:name "Vermoedelijk aankomstuur";
+	sh:order 20;
+	sh:path nodes:19b48e50-14d7-4191-ac2a-2414a932d89a.
 
 emb:source-node
 	 a form:Form,
 	form:TopLevelForm;
-	form:includes nodes:b71e037c-7e51-41ea-97f4-e9d34f0b327d, nodes:f063c141-f63e-4b26-9b56-263bebd8b9e8, nodes:9f32ccaa-434e-4913-a61f-7322c4ed9d21, nodes:d2fd5a9a-3c73-4dfa-a54b-b7cca8171581, nodes:ddd695c9-3347-46e6-95ae-92ac34a81bb8, nodes:06f35c65-1708-4d22-85a8-8b2e5c61c708, nodes:f6da3eae-6f5a-4f45-bdda-747a40db409e, nodes:cf8b2ea1-84c4-4a30-bb49-86e0016f0502, nodes:be254887-6e21-4af3-b885-f3243749266a, nodes:cc39c581-1a3c-443d-8e34-4a90ec20c81e, nodes:f2a5f626-e50e-41fb-806d-e5f6b5eb2a12, nodes:8059b441-aeb7-4811-a871-e9b538e83004, nodes:8182e7a7-b8e9-4069-b828-78e2833f8162, nodes:c43f5357-2d9e-47e0-a25f-5c2bd4d44631, nodes:758cb8ef-1a50-48ec-87ef-a72d1dbb3f80, nodes:0165c62f-69a9-4ca6-9a55-8ceaa9889108, nodes:6cd75ca1-a83d-4e73-949a-481021bece4b, nodes:350b24e9-8da4-4b6c-bc00-eabb7a46f25f, nodes:09ec5fa6-a3bc-44f3-9bfd-209908bf271b, nodes:156bd508-907a-402e-a96f-75a9c099722f, nodes:21cb7992-4640-4249-bbb9-3535a079253a, nodes:24289e48-258f-4919-8c3e-5783a6acb4a4, nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec, nodes:294a1526-879d-41ff-8fc2-9638bd48b636, nodes:3a7c3f9c-020e-4e3e-8d36-bcdab2f97470, nodes:42843f22-74bf-4cfc-8e0c-be2792f56bf4, nodes:4513defa-3bd9-4d57-838d-c1c117a26d7b, nodes:57286c38-59c9-49de-b189-52b8fac105d8, nodes:61360e6d-79da-43e8-9465-a8f3d253fd9d, nodes:61688ef8-08f4-4247-a3dd-6e2c2b1bc59a, nodes:662bda41-b3cb-4845-a015-2294d45b5a54, nodes:6795b232-c6a0-468c-8e7e-ae5bf778662a, nodes:85da8c73-310e-4f29-81db-8641277dfd64, nodes:b0896b7c-ba4b-4910-9583-6164923a0be8, nodes:b45d92ca-10df-4283-bf84-b78daf25cd9b, nodes:c7b7cc2c-a854-47b4-8dcc-f1a3a6358a4d, nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7, nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5, nodes:d4c6cacc-233b-4d12-8233-be9e57fcb4b7,
+	form:includes nodes:e363ff9c-33e0-4aa4-b5f5-426786d5313f, nodes:a9dc902c-8b80-4600-8bbd-5ddd1837b6d3, nodes:c3d435b0-d6dd-4c90-a8fc-549d3ff8559f, nodes:bf391124-a4c2-4c4e-a86b-b2b84b9a54c5, nodes:0932c906-6289-4522-855c-dcda49608557, nodes:2a132a4e-4cf4-4cc8-b297-ff17f802e943, nodes:62bfebb3-88c7-451f-a43a-93d07bcc3dbd, nodes:b71e037c-7e51-41ea-97f4-e9d34f0b327d, nodes:f063c141-f63e-4b26-9b56-263bebd8b9e8, nodes:9f32ccaa-434e-4913-a61f-7322c4ed9d21, nodes:d2fd5a9a-3c73-4dfa-a54b-b7cca8171581, nodes:ddd695c9-3347-46e6-95ae-92ac34a81bb8, nodes:06f35c65-1708-4d22-85a8-8b2e5c61c708, nodes:f6da3eae-6f5a-4f45-bdda-747a40db409e, nodes:cf8b2ea1-84c4-4a30-bb49-86e0016f0502, nodes:be254887-6e21-4af3-b885-f3243749266a, nodes:cc39c581-1a3c-443d-8e34-4a90ec20c81e, nodes:f2a5f626-e50e-41fb-806d-e5f6b5eb2a12, nodes:8059b441-aeb7-4811-a871-e9b538e83004, nodes:8182e7a7-b8e9-4069-b828-78e2833f8162, nodes:c43f5357-2d9e-47e0-a25f-5c2bd4d44631, nodes:758cb8ef-1a50-48ec-87ef-a72d1dbb3f80, nodes:0165c62f-69a9-4ca6-9a55-8ceaa9889108, nodes:6cd75ca1-a83d-4e73-949a-481021bece4b, nodes:350b24e9-8da4-4b6c-bc00-eabb7a46f25f, nodes:09ec5fa6-a3bc-44f3-9bfd-209908bf271b, nodes:156bd508-907a-402e-a96f-75a9c099722f, nodes:21cb7992-4640-4249-bbb9-3535a079253a, nodes:24289e48-258f-4919-8c3e-5783a6acb4a4, nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec, nodes:294a1526-879d-41ff-8fc2-9638bd48b636, nodes:3a7c3f9c-020e-4e3e-8d36-bcdab2f97470, nodes:42843f22-74bf-4cfc-8e0c-be2792f56bf4, nodes:4513defa-3bd9-4d57-838d-c1c117a26d7b, nodes:57286c38-59c9-49de-b189-52b8fac105d8, nodes:61360e6d-79da-43e8-9465-a8f3d253fd9d, nodes:61688ef8-08f4-4247-a3dd-6e2c2b1bc59a, nodes:662bda41-b3cb-4845-a015-2294d45b5a54, nodes:6795b232-c6a0-468c-8e7e-ae5bf778662a, nodes:85da8c73-310e-4f29-81db-8641277dfd64, nodes:b0896b7c-ba4b-4910-9583-6164923a0be8, nodes:b45d92ca-10df-4283-bf84-b78daf25cd9b, nodes:c7b7cc2c-a854-47b4-8dcc-f1a3a6358a4d, nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7, nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5, nodes:d4c6cacc-233b-4d12-8233-be9e57fcb4b7,
 nodes:d7db6004-8c14-40cc-9b78-caf61f533ad1, nodes:da6392e2-e639-4cb0-b9d0-bb95c4de6280, nodes:e2b66906-dae0-49e6-a3bf-22a1c5d55e1a, nodes:e81068b3-8fc4-4f3c-835f-4b077a145fb6, nodes:e9a8f4c8-bca8-485b-be8a-dfa19505bab9, nodes:ee1971f2-136b-4759-b556-abfab3f1743d, nodes:f6c81dda-e179-47c5-894d-4613d0b1e9bc, nodes:fd835e03-b0e6-4299-9c8e-01bd4d527568;
 	form:partOf nodes:08221725-7e94-4f16-80ec-279ce935bee8,
-	nodes:09652914-384e-4bd6-8de0-56a1d74f370f, nodes:26a989c2-701e-442a-9e9e-ba27460c8fea, nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd, nodes:0ff443be-6c35-47b2-8ff6-9fdbb197a2b4, nodes:8eb00a35-a69b-4826-84ac-f938032e88b0, nodes:b1133ef5-20aa-4e2a-a116-b8bf26cd1c5a, nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf, nodes:c11dda57-c224-4698-abd5-d1115ca240bf, nodes:f8f94a7c-28e1-4539-9c7f-25f1b050bfa7, nodes:3755eca2-15c2-4c2b-9c9d-a4e49da4c64d, nodes:26a989c2-701e-442a-9e9e-ba27460c8fea, nodes:7eccc7c5-fea6-4ad9-b805-39dd7be2e6dc, nodes:7fa3d672-47ef-4a51-b996-873023225f38, nodes:938f372b-25a9-474c-b392-4768f2b6bb28, nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1, nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e, nodes:f93a8e9b-1431-4493-973b-1981574d1b90 .
+	nodes:09652914-384e-4bd6-8de0-56a1d74f370f, nodes:26a989c2-701e-442a-9e9e-ba27460c8fea, nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd, nodes:0ff443be-6c35-47b2-8ff6-9fdbb197a2b4, nodes:8eb00a35-a69b-4826-84ac-f938032e88b0, nodes:b1133ef5-20aa-4e2a-a116-b8bf26cd1c5a, nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf, nodes:c11dda57-c224-4698-abd5-d1115ca240bf, nodes:f8f94a7c-28e1-4539-9c7f-25f1b050bfa7, nodes:3755eca2-15c2-4c2b-9c9d-a4e49da4c64d, nodes:7eccc7c5-fea6-4ad9-b805-39dd7be2e6dc, nodes:7fa3d672-47ef-4a51-b996-873023225f38, nodes:938f372b-25a9-474c-b392-4768f2b6bb28, nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1, nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e, nodes:f93a8e9b-1431-4493-973b-1981574d1b90 .
