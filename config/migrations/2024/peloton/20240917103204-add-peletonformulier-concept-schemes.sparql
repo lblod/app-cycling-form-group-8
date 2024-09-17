@@ -1,0 +1,202 @@
+# Add concept schemes used by e-inclusion
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/graphs/public> {
+    # Geslacht
+    <http://lblod.data.gift/concept-schemes/0d5505e1-6950-4aea-ae61-d3bb93dbcd4d>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "0d5505e1-6950-4aea-ae61-d3bb93dbcd4d" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Geslacht" ;
+      <http://www.w3.org/2004/02/skos/core#note> "keuzes voor geslacht" .
+
+    <http://lblod.data.gift/concepts/5fe49fe0-7eaa-4479-b27e-56ff9b568c00>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "5fe49fe0-7eaa-4479-b27e-56ff9b568c00" ;
+      <http://purl.org/linked-data/cube#order> 1 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "M" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/0d5505e1-6950-4aea-ae61-d3bb93dbcd4d> .
+
+    <http://lblod.data.gift/concepts/c95a03a2-4e7c-4b9b-98a8-346daca5c4c3>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "c95a03a2-4e7c-4b9b-98a8-346daca5c4c3" ;
+      <http://purl.org/linked-data/cube#order> 2 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "V" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/0d5505e1-6950-4aea-ae61-d3bb93dbcd4d> .
+
+    <http://lblod.data.gift/concepts/149a7bcd-0758-43c3-b56f-7054a52b3f7f>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "149a7bcd-0758-43c3-b56f-7054a52b3f7f" ;
+      <http://purl.org/linked-data/cube#order> 3 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "M/V" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/0d5505e1-6950-4aea-ae61-d3bb93dbcd4d> .
+
+
+    # Wegwedstrijd
+    <http://lblod.data.gift/concept-schemes/d22d6863-7a5a-4838-bca8-264531db6a10>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "d22d6863-7a5a-4838-bca8-264531db6a10" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Wegwedstrijd" ;
+      <http://www.w3.org/2004/02/skos/core#note> "keuzes voor wegwedstrijd" .
+
+    <http://lblod.data.gift/concepts/4c34d952-78eb-4acb-9d3b-405b8aa50781>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "4c34d952-78eb-4acb-9d3b-405b8aa50781" ;
+      <http://purl.org/linked-data/cube#order> 1 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Individuele wedstrijd" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d22d6863-7a5a-4838-bca8-264531db6a10> .
+
+    <http://lblod.data.gift/concepts/1f99a44a-d5e2-4584-bfa3-b7b7ee81ff54>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "1f99a44a-d5e2-4584-bfa3-b7b7ee81ff54" ;
+      <http://purl.org/linked-data/cube#order> 2 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Wedstrijd op gesloten omloop (ploeg)" ; #TODO: keep (ploeg) here or not?
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d22d6863-7a5a-4838-bca8-264531db6a10> .
+
+    <http://lblod.data.gift/concepts/c2e3ee6d-b6b3-4b7c-9257-11c91b758c5b>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "c2e3ee6d-b6b3-4b7c-9257-11c91b758c5b" ;
+      <http://purl.org/linked-data/cube#order> 3 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Wedstrijd op open omloop (ploeg)" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d22d6863-7a5a-4838-bca8-264531db6a10> .
+
+    <http://lblod.data.gift/concepts/f4add22c-fe63-4d8f-a641-9a6ecaa4e9e5>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "f4add22c-fe63-4d8f-a641-9a6ecaa4e9e5" ;
+      <http://purl.org/linked-data/cube#order> 4 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Wedstrijd in lijn (ploeg)" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d22d6863-7a5a-4838-bca8-264531db6a10> .
+
+    <http://lblod.data.gift/concepts/5e5d4cee-1a22-43f4-a762-41da3a79bd48>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "5e5d4cee-1a22-43f4-a762-41da3a79bd48" ;
+      <http://purl.org/linked-data/cube#order> 5 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Tijdrit (ploeg)" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/d22d6863-7a5a-4838-bca8-264531db6a10> .
+
+
+    # Alle terreinwedstrijd
+    <http://lblod.data.gift/concept-schemes/e96c414e-296d-4ca1-80f1-f0c7406726ba>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "e96c414e-296d-4ca1-80f1-f0c7406726ba" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Alle terreinwedstrijd" ;
+      <http://www.w3.org/2004/02/skos/core#note> "keuzes voor alle terreinwedstrijd" .
+
+    <http://lblod.data.gift/concepts/e7bf5381-c4aa-4cb6-8b28-693388d0d2d1>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "e7bf5381-c4aa-4cb6-8b28-693388d0d2d1" ;
+      <http://purl.org/linked-data/cube#order> 1 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "BMX" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/e96c414e-296d-4ca1-80f1-f0c7406726ba> .
+
+    <http://lblod.data.gift/concepts/3c7cfef7-c869-4b88-99d3-0a7f923cadbd>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "3c7cfef7-c869-4b88-99d3-0a7f923cadbd" ;
+      <http://purl.org/linked-data/cube#order> 2 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Cyclo-cross" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/e96c414e-296d-4ca1-80f1-f0c7406726ba> .
+
+    <http://lblod.data.gift/concepts/be9965ae-5bc6-4883-950d-97c54e6fb44a>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "be9965ae-5bc6-4883-950d-97c54e6fb44a" ;
+      <http://purl.org/linked-data/cube#order> 3 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Mountainbike" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/e96c414e-296d-4ca1-80f1-f0c7406726ba> .
+
+    <http://lblod.data.gift/concepts/46b1052b-b584-4bca-a27d-7b9022c933db>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "46b1052b-b584-4bca-a27d-7b9022c933db" ;
+      <http://purl.org/linked-data/cube#order> 4 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Trial" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/e96c414e-296d-4ca1-80f1-f0c7406726ba> .
+
+    # Categorie(en) deelnemers
+    <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "33ed3856-5ba7-488e-89df-9080daf488b7" ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "categorie(en) deelnemers" ;
+      <http://www.w3.org/2004/02/skos/core#note> "wielrenners welke aan de wedstrijd mogen deelnemen" .
+
+    <http://lblod.data.gift/concepts/7744e659-3ed1-4f74-a0a1-9dc05d75e2f5>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "7744e659-3ed1-4f74-a0a1-9dc05d75e2f5" ;
+      <http://purl.org/linked-data/cube#order> 1 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Elites met contract" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/fe417e9f-6284-4f7b-ad70-afe1d9071213>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "fe417e9f-6284-4f7b-ad70-afe1d9071213" ;
+      <http://purl.org/linked-data/cube#order> 2 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Elites zonder contract" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/2aa93acc-abac-43ce-a2c2-74eaaa031d08>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "2aa93acc-abac-43ce-a2c2-74eaaa031d08" ;
+      <http://purl.org/linked-data/cube#order> 3 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Beloften (U 23)" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/12e15b2f-ccbe-4f9f-bf4f-16138eefd955>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "12e15b2f-ccbe-4f9f-bf4f-16138eefd955" ;
+      <http://purl.org/linked-data/cube#order> 4 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Juniors (U 19)" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/dbb4ed7d-775f-4ae3-a59d-54cc5a36b56c>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "dbb4ed7d-775f-4ae3-a59d-54cc5a36b56c" ;
+      <http://purl.org/linked-data/cube#order> 5 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Nieuwelingen (U 17)" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/acdd76ef-5b41-43fc-9dc3-f0671440bbdb>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "acdd76ef-5b41-43fc-9dc3-f0671440bbdb" ;
+      <http://purl.org/linked-data/cube#order> 6 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Aspiranten" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/48d5d3d9-fdaa-4e15-b399-bb8218d4a848>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "48d5d3d9-fdaa-4e15-b399-bb8218d4a848" ;
+      <http://purl.org/linked-data/cube#order> 7 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Miniemen" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/fe90abda-1191-4cd4-b172-2d54ac1205db>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "fe90abda-1191-4cd4-b172-2d54ac1205db" ;
+      <http://purl.org/linked-data/cube#order> 8 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Masters" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/ace57d36-6080-4742-8b9f-8ef98416edc2>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "ace57d36-6080-4742-8b9f-8ef98416edc2" ;
+      <http://purl.org/linked-data/cube#order> 9 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Amateurs" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/975e3bb0-3a8c-45a8-8bdf-65b5a6edd22b>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "975e3bb0-3a8c-45a8-8bdf-65b5a6edd22b" ;
+      <http://purl.org/linked-data/cube#order> 10 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Gentlemen" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/5b95a23e-2d52-4ed7-833a-b3723cb7b4e3>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "5b95a23e-2d52-4ed7-833a-b3723cb7b4e3" ;
+      <http://purl.org/linked-data/cube#order> 11 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "G-wielrenners" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+
+    <http://lblod.data.gift/concepts/930c1af8-bdbf-4f3e-8dea-4bab0bbdc51c>
+      <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> ;
+      <http://mu.semte.ch/vocabularies/core/uuid> "930c1af8-bdbf-4f3e-8dea-4bab0bbdc51c" ;
+      <http://purl.org/linked-data/cube#order> 12 ;
+      <http://www.w3.org/2004/02/skos/core#prefLabel> "Andere" ;
+      <http://www.w3.org/2004/02/skos/core#inScheme> <http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7> .
+  }
+}
