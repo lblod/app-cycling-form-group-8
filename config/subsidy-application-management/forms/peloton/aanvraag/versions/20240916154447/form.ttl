@@ -1,479 +1,236 @@
-@prefix form: <http://lblod.data.gift/vocabularies/forms/> .
+@prefix : <#>.
+@prefix form: <http://lblod.data.gift/vocabularies/forms/>.
 @prefix sh: <http://www.w3.org/ns/shacl#>.
-@prefix mu: <http://mu.semte.ch/vocabularies/core/> .
-@prefix fieldGroups: <http://data.lblod.info/field-groups/> .
-@prefix fields: <http://data.lblod.info/fields/> .
-@prefix displayTypes: <http://lblod.data.gift/display-types/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix schema: <http://schema.org/>.
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>.
-@prefix planSamenleven: <http://lblod.data.gift/vocabularies/subsidie/plan-samenleven/>.
-@prefix dct: <http://purl.org/dc/terms/>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix nie: <http://www.semanticdesktop.org/ontologies/2007/01/19/nie#>.
+@prefix displayTypes: <http://lblod.data.gift/display-types/>.
+@prefix nodes: <http://data.lblod.info/form-data/nodes/>.
+@prefix emb: <http://ember-submission-form-fields/>.
 
-##########################################################
-# Property groups
-##########################################################
-
-fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 a form:PropertyGroup;
-    mu:uuid "4558f2d6-1ba4-4211-beb9-5e3a4b65b975";
-    sh:description "parent property-group, used to group fields and property-groups together";
-    sh:order 1 .
-
-fields:2232cd10-01d6-4f67-966a-2c22932437b4 a form:PropertyGroup;
-    mu:uuid "2232cd10-01d6-4f67-966a-2c22932437b4";
-    sh:description "contact information";
-    sh:order 2;
-    sh:name "Contactgegevens contactpersoon" ;
-    form:help "Dit is de persoon die gecontacteerd wordt bij de opvolging van dit dossier." ;
-    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
-
-fields:386530d7-b4b4-41c9-8146-e2d8d629d77f a form:PropertyGroup;
-    mu:uuid "386530d7-b4b4-41c9-8146-e2d8d629d77f";
-    sh:description "payment";
+nodes:08221725-7e94-4f16-80ec-279ce935bee8
+    a form:Section;
+    sh:name
+    "Categorie(en) van wielrenners welke aan de wedstrijd mogen deelnemen";
+    sh:order 4 .
+nodes:09652914-384e-4bd6-8de0-56a1d74f370f
+a form:Section; sh:name "Aard van de wielerwedstrijd"; sh:order 3 .
+nodes:1493a80e-4080-455f-a3da-c3a0ddc07945
+form:shape nodes:c5a35ec0-7892-4020-a158-39c00db55114 .
+nodes:156bd508-907a-402e-a96f-75a9c099722f
+    a form:Field;
+    form:displayType displayTypes:conceptSchemeMultiSelector;
+    form:help
+        "TODO: use conceptSchemeMultiSelectCheckboxes, add concept-scheme and 'andere'";
+    form:options
+        """{
+  "conceptScheme": "https://data.vlaanderen.be/id/conceptscheme/BesluitType"
+}""";
+    form:partOf nodes:08221725-7e94-4f16-80ec-279ce935bee8;
+    sh:name "Categorie(en)";
+    sh:order 18;
+    sh:path nodes:711611f5-b6db-4ef0-99c2-f1cfab13c674 .
+nodes:21cb7992-4640-4249-bbb9-3535a079253a
+    a form:Field;
+    form:displayType displayTypes:conceptSchemeRadioButtons;
+    form:help "TODO: concept-scheme";
+    form:options
+        """{
+  "conceptScheme": "http://lblod.data.gift/concept-schemes/31d5b7f2-fd44-4ef6-8fbe-95ba26d0b3fb"
+}""";
+    form:partOf nodes:09652914-384e-4bd6-8de0-56a1d74f370f;
+    sh:name "Wegwedstrijd";
+    sh:order 15;
+    sh:path nodes:745428c2-a218-4b20-b681-33193e04427a.
+nodes:24289e48-258f-4919-8c3e-5783a6acb4a4
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e;
+    sh:name "Naam wielerwedstrijd";
     sh:order 3;
-    sh:name "Betaling" ;
-    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
-
-fields:1351b517-2c69-4179-be27-b684739dc006 a form:PropertyGroup;
-    mu:uuid "1351b517-2c69-4179-be27-b684739dc006";
-    sh:description "objectives";
-    sh:order 4;
-    sh:name "Op welke doelstellingen wenst het bestuur in te zetten?" ;
-    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
-
-fields:590ec414-829e-4232-88eb-95c205773fae a form:PropertyGroup;
-    mu:uuid "590ec414-829e-4232-88eb-95c205773fae";
-    sh:description "Financiële stimulans";
+    sh:path nodes:e61f56db-6346-4a61-a75e-33e091789e40 .
+nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    sh:name "Vermoedelijk aankomstuur";
+    sh:order 20;
+    sh:path nodes:19b48e50-14d7-4191-ac2a-2414a932d89a.
+nodes:294a1526-879d-41ff-8fc2-9638bd48b636
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Telefoonnummer";
+    sh:order 10;
+    sh:path nodes:baf13922-3020-4b3c-ba6a-bde0d27e8888 .
+nodes:42843f22-74bf-4cfc-8e0c-be2792f56bf4
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Postcode";
+    sh:order 8;
+    sh:path nodes:a4db7032-919e-4b9a-af12-969a10c73b3b.
+nodes:4513defa-3bd9-4d57-838d-c1c117a26d7b
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Naam";
     sh:order 5;
-    sh:name "Financiële stimulans" ;
-    form:help """<a href=\"https://www.plansamenleven.be\" target=\"_blank\">Hier</a> vind je meer info over deze financiële stimulansen""";
-    sh:group fields:4558f2d6-1ba4-4211-beb9-5e3a4b65b975 .
+    sh:path nodes:1479a95e-2132-4bfa-be7b-6a21bd304e37 .
+nodes:57286c38-59c9-49de-b189-52b8fac105d8
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:f93a8e9b-1431-4493-973b-1981574d1b90;
+    sh:name "Plaats van vertrek";
+    sh:order 21;
+    sh:path nodes:8559b39a-15c9-4b99-b973-293f8fd1c3ab.
+nodes:61360e6d-79da-43e8-9465-a8f3d253fd9d
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "E-mailadres";
+    sh:order 12;
+    sh:path nodes:d1d6981a-7fe1-468b-bee8-820bbbb3d4f1 .
+nodes:662bda41-b3cb-4845-a015-2294d45b5a54
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Voornaam";
+    sh:order 6;
+    sh:path nodes:b408e7e9-2ca9-4ca2-9d24-ec56c77851ed.
+nodes:66f1ec5a-cd81-47c1-b590-4c0f48869348
+a form:Field; sh:order 2; sh:path nodes:32672814-1a5f-4e54-a0a0-2d7017df5ce3 .
+nodes:724e0c2f-b015-4501-931f-3455e9d70b47
+a form:SubForm; form:includes nodes:db3ab073-f1c3-40af-8353-cf76de1e934a.
+nodes:768bb327-4c4c-4e3d-8914-731e0759c43b
+a form:Generator; form:prototype nodes:1493a80e-4080-455f-a3da-c3a0ddc07945 .
+nodes:8267a58e-7c72-49e3-a767-f204ae40f4ad
+    a form:Listing;
+    form:canAdd true;
+    form:canRemove true;
+    form:createGenerator nodes:768bb327-4c4c-4e3d-8914-731e0759c43b;
+    form:scope nodes:bab594e8-ea60-4fa2-acc6-84828cbcfc6b;
+    sh:order 1 .
+nodes:85da8c73-310e-4f29-81db-8641277dfd64
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Adres";
+    sh:order 7;
+    sh:path nodes:1cc101bf-efe2-477e-8fab-fb1c7db42142 .
+nodes:b0896b7c-ba4b-4910-9583-6164923a0be8
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "GSM-nummer";
+    sh:order 11;
+    sh:path nodes:4d31d67b-232b-4a27-934e-cc471ae65cc7 .
+nodes:b45d92ca-10df-4283-bf84-b78daf25cd9b
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Gemeente";
+    sh:order 9;
+    sh:path nodes:e5e94c06-ec89-4d78-a83f-45d6f0612196 .
+nodes:bab594e8-ea60-4fa2-acc6-84828cbcfc6b
+a form:Scope; sh:path nodes:dbd3802c-5f2f-4002-8ea8-2e332b720ac8 .
+nodes:c0ec69d0-78fc-4b3a-b057-778f111f6b98 a form:Section; sh:order 2 .
 
+nodes:c5a35ec0-7892-4020-a158-39c00db55114 a form:Field.
 
-##########################################################
-# Contact info
-##########################################################
-
-fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 a form:Field ;
-    mu:uuid "e19e245a-c24b-4fb5-84b8-a7e2744ce9a0";
-    sh:name "Voornaam contactpersoon" ;
-    sh:order 30 ;
-    sh:path ( schema:contactPoint foaf:firstName ) ;
-    form:validations
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path ( schema:contactPoint foaf:firstName ) ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-    ] ;
-    form:displayType displayTypes:defaultInput ;
-    sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
-
-fields:82258a58-6c67-4b0a-a26d-0676b88886ad a form:Field ;
-    mu:uuid "82258a58-6c67-4b0a-a26d-0676b88886ad";
-    sh:name "Familienaam contactpersoon" ;
-    sh:order 31 ;
-    sh:path ( schema:contactPoint foaf:familyName ) ;
-    form:validations
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path ( schema:contactPoint foaf:familyName ) ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-    ] ;
-    form:displayType displayTypes:defaultInput ;
-    sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
-
-fields:6285341d-a0ad-4933-bb5f-c49016b0f935 a form:Field ;
-    mu:uuid "6285341d-a0ad-4933-bb5f-c49016b0f935";
-    sh:name "Telefoonnummer" ;
-    sh:order 32 ;
-    sh:path ( schema:contactPoint schema:telephone ) ;
-    form:validations
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path ( schema:contactPoint schema:telephone ) ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-    ] ,
-    [ a form:ValidPhoneNumber ;
-        form:grouping form:MatchEvery ;
-        form:defaultCountry "BE" ;
-        sh:path ( schema:contactPoint schema:telephone ) ;
-        sh:resultMessage "Geef een geldig telefoonnummer in."@nl
-    ] ;
-    form:displayType displayTypes:defaultInput ;
-    sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
-
-fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb a form:Field ;
-    mu:uuid "31c743c7-b243-4ca7-a6c1-dc5f03cb5afb";
-    sh:name "Mailadres" ;
-    sh:order 33 ;
-    sh:path ( schema:contactPoint schema:email ) ;
-    form:validations
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path ( schema:contactPoint schema:email ) ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-    ] ,
-    [ a form:ValidEmail ;
-        form:grouping form:MatchEvery ;
-        sh:path ( schema:contactPoint schema:email ) ;
-        sh:resultMessage "Geef een geldig e-mailadres op."@nl
-    ] ;
-    form:displayType displayTypes:defaultInput ;
-    sh:group fields:2232cd10-01d6-4f67-966a-2c22932437b4 .
-
-##########################################################
-# Bank account
-##########################################################
-
-fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 a form:Field ;
-    mu:uuid "9b706641-f834-4f91-87ab-d490f7aa0ed7";
-    sh:name "Rekeningnummer uitbetaling" ;
-    form:help "IBAN: BE00 0000 0000 0000" ;
-    sh:order 41 ;
-    sh:path ( schema:bankAccount schema:identifier ) ;
-    form:validations
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path ( schema:bankAccount schema:identifier ) ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-    ] ,
-    [ a form:ValidIBAN ;
-        form:grouping form:MatchEvery ;
-        sh:path ( schema:bankAccount schema:identifier ) ;
-        sh:resultMessage "Geef een geldig IBAN op."@nl
-    ] ;
-    form:displayType displayTypes:defaultInput ;
-    sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
-
-fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 a form:Field ;
-    mu:uuid "5f2ae097-ce97-4a52-a5db-501cf9e114c4";
-    sh:name "Voeg een bevestingsbrief toe dat dit rekeningnummer gebruikt mag worden, ondertekend door de burgemeester en medeondertekend door de financieel directeur." ;
-    form:help "Deze brief moet enkel toegevoegd worden als dit niet het rekeningnummer is waarop het aandeel van het gemeentefonds wordt gestort." ;
-    sh:order 42 ;
-    sh:path ( schema:bankAccount dct:hasPart ) ;
-    form:displayType displayTypes:files ;
-    sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
-
-##########################################################
-# Hidden field required for all variations of URL or FILE
-# input field which require validation.
-# It makes sure there is a type attached to hasPart object.
-# This enables correct validation in both front and backend.
-##########################################################
-
-fields:ccb94821-be31-43fa-87df-ef64e3c4ce45 a form:Field ;
-    mu:uuid "ccb94821-be31-43fa-87df-ef64e3c4ce45" ;
-    sh:name "Type RemoteDataObject or FileDataObject [hidden input]" ;
-    sh:order 43 ;
-    sh:path ( schema:bankAccount dct:hasPart rdf:type );
-    sh:group fields:386530d7-b4b4-41c9-8146-e2d8d629d77f .
-
-
-##########################################################
-# policy goals: Plan Living together table
-##########################################################
-
-fields:a07b54fd-ac60-4968-94ee-65bb1bd702fd a form:Field ;
-    mu:uuid "a07b54fd-ac60-4968-94ee-65bb1bd702fd";
-    sh:name "Algemene beleidsdoelstellingen" ;
-    sh:order 45 ;
-    sh:path lblodSubsidie:planLivingTogetherTable ;
-    form:options """{}""" ;
-    form:displayType displayTypes:planLivingTogetherTable ;
-    form:validations
-    [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Gelieve de tabel correct in te vullen." ;
-      sh:path ( lblodSubsidie:planLivingTogetherTable lblodSubsidie:validPlanLivingTogetherTable ) ] ;
-    sh:group fields:1351b517-2c69-4179-be27-b684739dc006 .
-
-##########################################################
-# Financiële stimulans: samenwerking non eu
-##########################################################
-fields:30fdc26c-7f61-403f-a7da-507c2b90e750 a form:Field ;
-    mu:uuid "30fdc26c-7f61-403f-a7da-507c2b90e750";
-    sh:name "Gaan jullie als gemeente met meer dan 7.500 inwoners van niet-EU herkomst een samenwerking aan met een kleiner lokaal bestuur?" ;
-    sh:order 50 ;
-    sh:path planSamenleven:hasCollaborationWithOtherLBNonEu ;
-    form:validations
-        [ a form:ConceptSchemeConstraint ;
-            form:grouping form:Bag ;
-            sh:path planSamenleven:hasCollaborationWithOtherLBNonEu ;
-            form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
-            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
-        ],
-        [ a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht."@nl;
-            sh:path planSamenleven:hasCollaborationWithOtherLBNonEu
-        ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2"}""" ;
-    form:displayType displayTypes:conceptSchemeRadioButtons ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
-
-##########################################################
-# Financiële stimulans: social impact obligatie
-##########################################################
-fields:85515be8-407e-41ac-a97d-66df37685e7c a form:Field ;
-    mu:uuid "85515be8-407e-41ac-a97d-66df37685e7c";
-    sh:name "Willen jullie als gemeente gebruik maken van het instrument 'Social Impact Obligatie'?" ;
-    sh:order 60 ;
-    sh:path planSamenleven:usesSocialImpactBound ;
-    form:validations
-        [ a form:ConceptSchemeConstraint ;
-            form:grouping form:Bag ;
-            sh:path planSamenleven:usesSocialImpactBound ;
-            form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
-            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
-        ],
-        [ a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht."@nl;
-            sh:path planSamenleven:usesSocialImpactBound
-        ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2"}""" ;
-    form:displayType displayTypes:conceptSchemeRadioButtons ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae;
-    form:hasConditionalFieldGroup fields:1d72bc54-2d6f-4331-a0be-9f2769cce0c9 .
-
-fields:1d72bc54-2d6f-4331-a0be-9f2769cce0c9 a form:ConditionalFieldGroup ;
-    mu:uuid "1d72bc54-2d6f-4331-a0be-9f2769cce0c9";
-    form:conditions
-      [ a form:SingleCodelistValue ;
-        form:grouping form:Bag ;
-        sh:path planSamenleven:usesSocialImpactBound ;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
-        form:customValue <http://lblod.data.gift/concepts/9ffe7dd4-42b7-4af3-bdba-ccd080195715>
-      ] ;
-    form:hasFieldGroup fieldGroups:b3b32ccd-25b9-42c2-bc8a-712958e0ff4d .
-
-##########################################################
-# Financiële stimulans: social impact bound Proposal
-##########################################################
-
-fields:7b92308a-0098-4d7c-a6af-fcb1871e21a9 a form:Field ;
-    mu:uuid "7b92308a-0098-4d7c-a6af-fcb1871e21a9";
-    sh:name "Informatie over de bestaande expertise rond Sociale Impact Obligatie" ;
-    sh:description "Geef hier een kort overzicht van hoever het lokaal bestuur staat in het denken en het opzet van een Sociale Impact Obligatie. Zijn er al concrete acties ondernomen?" ;
-    sh:order 61 ;
-    sh:path planSamenleven:socialImpactBoundProgress ;
-    form:validations
-      [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path planSamenleven:socialImpactBoundProgress
-      ] ,
-      [ a form:MaxLength ; 
-          form:max 2500;
-          form:grouping form:MatchEvery ;
-          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
-          sh:path planSamenleven:socialImpactBoundProgress
-      ]
-      ;
-    form:displayType displayTypes:textArea ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
-
-fields:7ae506bd-5370-4b50-9324-a81cb9bc6905 a form:Field ;
-    mu:uuid "7ae506bd-5370-4b50-9324-a81cb9bc6905";
-    sh:name "Maatschappelijke problemen" ;
-    sh:description "Welke maatschappelijk probleem willen jullie aanpakken via een Sociale Impact Obligatie waar tot op heden geen oplossing voor is en aan welke acties van plan Samenleven koppel je dit?" ;
-    sh:order 62 ;
-    sh:path planSamenleven:unresolvedSocialProblems ;
-    form:validations
-      [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path planSamenleven:unresolvedSocialProblems
-      ] ,
-      [ a form:MaxLength ;
-          form:max 2500;
-          form:grouping form:MatchEvery ;
-          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
-          sh:path planSamenleven:unresolvedSocialProblems
-      ]
-      ;
-    form:displayType displayTypes:textArea ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
-
-fields:b8b63c63-f468-4c31-b3e3-866f7ccda184 a form:Field ;
-    mu:uuid "b8b63c63-f468-4c31-b3e3-866f7ccda184";
-    sh:name "Interesse in lerend netwerk" ;
-    sh:description "Omschrijf in welke mate het lokaal bestuur bereid is deel te nemen aan een lerend netwerk. Geef aan wat de verwachting is van het lokaal bestuur ten aanzien van dit lerend netwerk en wat de eigen bijdrage zou kunnen zijn.";
-    sh:order 63 ;
-    sh:path planSamenleven:learningNetworkWillingness  ;
-    form:validations
-      [ a form:RequiredConstraint ;
-      form:grouping form:Bag ;
-      sh:resultMessage "Dit veld is verplicht."@nl;
-      sh:path planSamenleven:learningNetworkWillingness
-      ] ,
-      [ a form:MaxLength ;
-          form:max 2500;
-          form:grouping form:MatchEvery ;
-          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
-          sh:path planSamenleven:learningNetworkWillingness
-      ]
-      ;
-    form:displayType displayTypes:textArea ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
-
-##########################################################
-# Financiële stimulans: proposesMentorship
-##########################################################
-fields:4cfdb602-4b1c-4891-a3c3-cb70e1244132 a form:Field ;
-    mu:uuid "4cfdb602-4b1c-4891-a3c3-cb70e1244132";
-    sh:name "Willen jullie als gemeente het mentorschap opnemen over een bepaalde actie?" ;
-    sh:order 80 ;
-    sh:path planSamenleven:proposesMentorship ;
-    form:validations
-        [ a form:ConceptSchemeConstraint ;
-            form:grouping form:Bag ;
-            sh:path planSamenleven:proposesMentorship ;
-            form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
-            sh:resultMessage "Selecteer een waarde uit de lijst."@nl
-        ],
-        [ a form:RequiredConstraint ;
-            form:grouping form:Bag ;
-            sh:resultMessage "Dit veld is verplicht."@nl;
-            sh:path planSamenleven:proposesMentorship
-        ] ;
-    form:options  """{"conceptScheme":"http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2"}""" ;
-    form:displayType displayTypes:conceptSchemeRadioButtons ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae;
-    form:hasConditionalFieldGroup fields:86aab42b-4b79-43e6-8e65-59af22ff1566 .
-
-fields:86aab42b-4b79-43e6-8e65-59af22ff1566 a form:ConditionalFieldGroup ;
-    mu:uuid "86aab42b-4b79-43e6-8e65-59af22ff1566";
-    form:conditions
-      [ a form:SingleCodelistValue ;
-        form:grouping form:Bag ;
-        sh:path planSamenleven:proposesMentorship ;
-        form:conceptScheme <http://lblod.data.gift/concept-schemes/af23feb1-a876-4834-9427-947f93b776f2> ;
-        form:customValue <http://lblod.data.gift/concepts/9ffe7dd4-42b7-4af3-bdba-ccd080195715>
-      ] ;
-    form:hasFieldGroup fieldGroups:c27c749a-309f-4f6a-b7b9-c7cb34728965 .
-
-##########################################################
-# Financiële stimulans: mentorshipAction
-##########################################################
-fields:26f5b41d-a410-4c0d-b1a8-60208fe2bb49 a form:Field ;
-    mu:uuid "26f5b41d-a410-4c0d-b1a8-60208fe2bb49";
-    sh:name "Geef hier aan voor welke actie dit van toepassing is:" ;
-    sh:order 90 ;
-    sh:path planSamenleven:mentorshipAction ;
-    form:validations
-    [ a form:RequiredConstraint ;
-        form:grouping form:Bag ;
-        sh:path planSamenleven:mentorshipAction ;
-        sh:resultMessage "Dit veld is verplicht."@nl
-    ] ;
-    form:displayType displayTypes:defaultInput ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
-
-##########################################################
-# Financiële stimulans: mentorshipActionDetails
-##########################################################
-
-fields:a545a2d0-aa48-4667-83d1-29a1c0d2c75c a form:Field ;
-    mu:uuid "a545a2d0-aa48-4667-83d1-29a1c0d2c75c";
-    sh:name "Op welke manier hebben jullie expertise rond deze actie verzameld? Motiveer waarom en hoe jullie deze rol als mentor zouden opnemen." ;
-    sh:order 100 ;
-    sh:path planSamenleven:mentorshipActionDetails ;
-    form:validations
-      [ a form:RequiredConstraint ;
-          form:grouping form:Bag ;
-          sh:resultMessage "Dit veld is verplicht."@nl;
-          sh:path planSamenleven:mentorshipActionDetails
-      ],
-      [ a form:MaxLength ;
-          form:max 2500;
-          form:grouping form:MatchEvery ;
-          sh:resultMessage "Gelieve hat aantal tekens te beperken tot 2500."@nl;
-          sh:path planSamenleven:mentorshipActionDetails
-      ]
-      ;
-    form:displayType displayTypes:textArea ;
-    sh:group fields:590ec414-829e-4232-88eb-95c205773fae .
-
-##########################################################
-# Field groups
-##########################################################
-
-##########################################################
-# Main
-##########################################################
-fieldGroups:main a form:FieldGroup ;
-    mu:uuid "70eebdf0-14dc-47f7-85df-e1cfd41c3855" ;
-    form:hasField
-
-        ### First name contact person
-        fields:e19e245a-c24b-4fb5-84b8-a7e2744ce9a0 ,
-
-        ### First name contact person
-        fields:82258a58-6c67-4b0a-a26d-0676b88886ad ,
-
-        ### Phone
-        fields:6285341d-a0ad-4933-bb5f-c49016b0f935 ,
-
-        ### Email
-        fields:31c743c7-b243-4ca7-a6c1-dc5f03cb5afb ,
-
-        ### Bank account number ###
-        fields:9b706641-f834-4f91-87ab-d490f7aa0ed7 ,
-
-        ### Plan Living Together Table
-        fields:a07b54fd-ac60-4968-94ee-65bb1bd702fd ,
-
-        ### Confirmation letter ###
-        fields:5f2ae097-ce97-4a52-a5db-501cf9e114c4 ,
-
-        ### Confirmation letter: hidden ###
-        fields:ccb94821-be31-43fa-87df-ef64e3c4ce45,
-
-        ### hasCollaborationWithOtherLBNonEu ###
-        fields:30fdc26c-7f61-403f-a7da-507c2b90e750 ,
-        
-
-        ### planSamenleven:usesSocialImpactBound ###
-        fields:85515be8-407e-41ac-a97d-66df37685e7c ,
-
-        ### planSamenleven:proposesMentorship ###
-        fields:4cfdb602-4b1c-4891-a3c3-cb70e1244132 .
-
-##########################################################
-# Branch: usesSocialImpactBound == ja
-##########################################################
-
-fieldGroups:b3b32ccd-25b9-42c2-bc8a-712958e0ff4d a form:FieldGroup ;
-    mu:uuid "b3b32ccd-25b9-42c2-bc8a-712958e0ff4d" ;
-    form:hasField
-
-    ### planSamenleven:usesSocialImpactBoundProposal ###
-    fields:7b92308a-0098-4d7c-a6af-fcb1871e21a9 ,
-
-    ### planSamenleven:usesSocialImpactBoundProposal ###
-    fields:7ae506bd-5370-4b50-9324-a81cb9bc6905 ,
-
-    ### planSamenleven:usesSocialImpactBoundProposal ###
-    fields:b8b63c63-f468-4c31-b3e3-866f7ccda184 .
-
-##########################################################
-# Branch: proposesMentorship == ja
-##########################################################
-
-fieldGroups:c27c749a-309f-4f6a-b7b9-c7cb34728965 a form:FieldGroup ;
-    mu:uuid "c27c749a-309f-4f6a-b7b9-c7cb34728965" ;
-    form:hasField
-
-    ### planSamenleven:mentorschipAction ###
-    fields:26f5b41d-a410-4c0d-b1a8-60208fe2bb49 ,
-
-    ### planSamenleven:mentorschipActionDetails ###
-    fields:a545a2d0-aa48-4667-83d1-29a1c0d2c75c .
-
-form:6b70a6f0-cce2-4afe-81f5-5911f45b0b27 a form:Form ;
-    mu:uuid "6b70a6f0-cce2-4afe-81f5-5911f45b0b27" ;
-    form:hasFieldGroup fieldGroups:main .
+nodes:c7b7cc2c-a854-47b4-8dcc-f1a3a6358a4d
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:f93a8e9b-1431-4493-973b-1981574d1b90;
+    sh:name "Plaats van aankomst";
+    sh:order 22;
+    sh:path nodes:d8bb41f8-1975-43cd-9483-c345088d0c3d.
+nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5
+    a form:Field;
+    form:displayType displayTypes:date;
+    form:partOf nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e;
+    sh:name "Datum wedstrijd";
+    sh:order 4;
+    sh:path nodes:fdd42a55-f190-4200-b8f4-f59928f8fd0c.
+nodes:d4c6cacc-233b-4d12-8233-be9e57fcb4b7
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:help "bijvoorbeeld: voorzitter, secretaris, koersdirecteur...";
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Functie binnen de organisatie";
+    sh:order 13;
+    sh:path nodes:2943bb52-5b26-4871-af4d-1c47dd852121 .
+nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1
+a form:Section; sh:name "Identiteit van de aanvrager"; sh:order 2 .
+nodes:da6392e2-e639-4cb0-b9d0-bb95c4de6280
+    a form:Field;
+    form:displayType displayTypes:conceptSchemeRadioButtons;
+    form:help "TODO: concept-scheme";
+    form:options
+        """{
+  "conceptScheme": "http://lblod.data.gift/concept-schemes/31d5b7f2-fd44-4ef6-8fbe-95ba26d0b3fb"
+}""";
+    form:partOf nodes:09652914-384e-4bd6-8de0-56a1d74f370f;
+    sh:name "Alle terreinwedstrijd";
+    sh:order 16;
+    sh:path nodes:1af972ed-5927-4bc8-a09f-8cd1a54e16f4 .
+nodes:db3ab073-f1c3-40af-8353-cf76de1e934a
+a form:Field; sh:order 1; sh:path nodes:2551cbb8-446d-488b-bbb8-3e64a5af5947 .
+nodes:e2b66906-dae0-49e6-a3bf-22a1c5d55e1a
+    a form:Field;
+    form:displayType displayTypes:conceptSchemeRadioButtons;
+    form:help "TODO: concept-scheme";
+    form:options
+        """{
+  "conceptScheme": "http://lblod.data.gift/concept-schemes/31d5b7f2-fd44-4ef6-8fbe-95ba26d0b3fb"
+}""";
+    form:partOf nodes:08221725-7e94-4f16-80ec-279ce935bee8;
+    sh:name "Geslacht";
+    sh:order 17;
+    sh:path nodes:75c24b41-aca5-4c53-b451-2aaf11c0d5fd.
+nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e
+a form:Section; sh:name "Wedstrijd"; sh:order 1 .
+nodes:e81068b3-8fc4-4f3c-835f-4b077a145fb6
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+    sh:name "Orginisatie";
+    sh:order 14;
+    sh:path nodes:da4691c2-40de-459d-9929-7ec8c2bde517 .
+nodes:f93a8e9b-1431-4493-973b-1981574d1b90
+    a form:Section;
+    sh:name
+    "Inlichtingen betreffende het tijdstip en de plaats van de wedstrijd";
+    sh:order 5 .
+nodes:fd835e03-b0e6-4299-9c8e-01bd4d527568
+    a form:Field;
+    form:displayType displayTypes:defaultInput;
+    form:partOf nodes:f93a8e9b-1431-4493-973b-1981574d1b90;
+    sh:name "Startuur";
+    sh:order 19;
+    sh:path nodes:62adc08a-54df-4786-b7d8-7a0fb3474654 .
+emb:source-node
+    a form:Form, form:TopLevelForm;
+    form:includes
+        nodes:156bd508-907a-402e-a96f-75a9c099722f,
+        nodes:21cb7992-4640-4249-bbb9-3535a079253a,
+        nodes:24289e48-258f-4919-8c3e-5783a6acb4a4,
+        nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec,
+        nodes:294a1526-879d-41ff-8fc2-9638bd48b636,
+        nodes:42843f22-74bf-4cfc-8e0c-be2792f56bf4,
+        nodes:4513defa-3bd9-4d57-838d-c1c117a26d7b,
+        nodes:57286c38-59c9-49de-b189-52b8fac105d8,
+        nodes:61360e6d-79da-43e8-9465-a8f3d253fd9d,
+        nodes:662bda41-b3cb-4845-a015-2294d45b5a54,
+        nodes:85da8c73-310e-4f29-81db-8641277dfd64,
+        nodes:b0896b7c-ba4b-4910-9583-6164923a0be8,
+        nodes:b45d92ca-10df-4283-bf84-b78daf25cd9b,
+        nodes:c7b7cc2c-a854-47b4-8dcc-f1a3a6358a4d,
+        nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5,
+        nodes:d4c6cacc-233b-4d12-8233-be9e57fcb4b7,
+        nodes:da6392e2-e639-4cb0-b9d0-bb95c4de6280,
+        nodes:e2b66906-dae0-49e6-a3bf-22a1c5d55e1a,
+        nodes:e81068b3-8fc4-4f3c-835f-4b077a145fb6,
+        nodes:fd835e03-b0e6-4299-9c8e-01bd4d527568;
+    form:partOf
+        nodes:08221725-7e94-4f16-80ec-279ce935bee8,
+        nodes:09652914-384e-4bd6-8de0-56a1d74f370f,
+        nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1,
+        nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e,
+        nodes:f93a8e9b-1431-4493-973b-1981574d1b90 .
