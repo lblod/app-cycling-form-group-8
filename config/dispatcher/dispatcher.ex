@@ -189,7 +189,18 @@ defmodule Dispatcher do
   match "/subsidy-application-forms/*path" do
     forward conn, path, "http://cache/subsidy-application-forms/"
   end
+  #######################################################################
+  # SPARQL                                                              #
+  #######################################################################
 
+  # if we want to add a varnish sparql cache
+  # match "/sparql", %{ layer: :api, accept: %{ sparql: true } } do
+  #   forward conn, [], "http://sparql-cache/sparql"
+  # end
+
+  match "/raw-sparql", %{ layer: :api, accept: %{ sparql: true } } do
+    forward conn, [], "http://database:8890/sparql"
+  end
   #################################################################
   # subsidy-applications: custom API endpoints
   #################################################################
