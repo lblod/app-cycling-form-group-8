@@ -137,30 +137,30 @@ nodes:14d0162a-e8b9-4a76-94a8-fac9298f110d
 nodes:156bd508-907a-402e-a96f-75a9c099722f
 	 a form:Field;
 	form:displayType displayTypes:conceptSchemeMultiSelectCheckboxes;
-  form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/e96c414e-296d-4ca1-80f1-f0c7406726ba" }""";
+  form:options """{ "conceptScheme": "http://lblod.data.gift/concept-schemes/33ed3856-5ba7-488e-89df-9080daf488b7" }""";
 	form:partOf nodes:08221725-7e94-4f16-80ec-279ce935bee8;
 	sh:name "Categorie(en)";
 	sh:order 18;
 	sh:path nodes:711611f5-b6db-4ef0-99c2-f1cfab13c674 .
 
 # TODO: check if this 'andere' works
-nodes:dc35b8fd-3f6a-4716-99d9-9ab92246b5a5
-   a form:Field;
-	form:displayType displayTypes:defaultInput;
-	form:partOf nodes:08221725-7e94-4f16-80ec-279ce935bee8;
-	form:rendersWhen [
-		a form:MatchValues;
-		form:grouping form:Bag;
-		form:valuesIn ( concept:930c1af8-bdbf-4f3e-8dea-4bab0bbdc51c);
-    sh:path lblodSubsidie:actieDoelgroepBereikt ];
-	form:validatedBy [
-		a form:RequiredConstraint;
-		form:grouping form:Bag;
-		sh:path lblodSubsidie:andereCategorie;
-		sh:resultMessage "Dit veld is verplicht." ];
-	sh:name "Andere";
-	sh:order 18;
-	sh:path lblodSubsidie:andereCategorie .
+# nodes:dc35b8fd-3f6a-4716-99d9-9ab92246b5a5
+#    a form:Field;
+# 	form:displayType displayTypes:defaultInput;
+# 	form:partOf nodes:08221725-7e94-4f16-80ec-279ce935bee8;
+# 	form:rendersWhen [
+# 		a form:MatchValues;
+# 		form:grouping form:Bag;
+# 		form:valuesIn ( concept:930c1af8-bdbf-4f3e-8dea-4bab0bbdc51c);
+#     sh:path lblodSubsidie:actieDoelgroepBereikt ];
+# 	form:validatedBy [
+# 		a form:RequiredConstraint;
+# 		form:grouping form:Bag;
+# 		sh:path lblodSubsidie:andereCategorie;
+# 		sh:resultMessage "Dit veld is verplicht." ];
+# 	sh:name "Andere";
+# 	sh:order 18;
+# 	sh:path lblodSubsidie:andereCategorie .
 
 nodes:21cb7992-4640-4249-bbb9-3535a079253a
 	 a form:Field;
@@ -449,6 +449,7 @@ nodes:c7b7cc2c-a854-47b4-8dcc-f1a3a6358a4d
 	sh:order 22;
 	sh:path nodes:d8bb41f8-1975-43cd-9483-c345088d0c3d.
 
+# Identiteit van de koersdirecteur
 nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
@@ -456,6 +457,64 @@ nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	sh:name "Naam";
 	sh:order 30;
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cc39c581-1a3c-443d-8e34-4a90ec20c81e
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
+	sh:name "Voornaam";
+	sh:order 31;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
+	sh:name "Adres";
+	sh:order 32;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
+	sh:name "Postcode";
+	sh:order 33;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
+	sh:name "Rijksregisternummer";
+	sh:order 34;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
+	sh:name "Telefoonnummer";
+	sh:order 35;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
+	sh:name "GSM-nummer";
+	sh:order 36;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
+	sh:name "E-mailadres";
+	sh:order 37;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+####################################################
 
 nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5
 	 a form:Field;
