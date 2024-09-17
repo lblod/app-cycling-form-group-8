@@ -59,11 +59,13 @@ nodes:938f372b-25a9-474c-b392-4768f2b6bb28
 
 nodes:26a989c2-701e-442a-9e9e-ba27460c8fea
 	 a form:Section;
+  form:help "Vul hier de bevoorradingszones in waarvoor toestemming wordt gevraagd om te voorzien"
 	sh:name "Bevoorradingszone";
 	sh:order 11 .
 
 nodes:8eb00a35-a69b-4826-84ac-f938032e88b0
 	 a form:Section;
+  form:help "Vul hier de wegwerpzones in waarvoor toestemming wordt gevraagd om te voorzien"
 	sh:name "Wegwerpzone";
 	sh:order 12 .
 
@@ -465,7 +467,7 @@ nodes:cc39c581-1a3c-443d-8e34-4a90ec20c81e
 	sh:order 31;
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
 
-nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+nodes:f2a5f626-e50e-41fb-806d-e5f6b5eb2a12
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
 	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
@@ -473,7 +475,7 @@ nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	sh:order 32;
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
 
-nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+nodes:8059b441-aeb7-4811-a871-e9b538e83004
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
 	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
@@ -481,7 +483,7 @@ nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	sh:order 33;
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
 
-nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+nodes:8182e7a7-b8e9-4069-b828-78e2833f8162
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
 	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
@@ -489,7 +491,7 @@ nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	sh:order 34;
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
 
-nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+nodes:c43f5357-2d9e-47e0-a25f-5c2bd4d44631
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
 	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
@@ -497,7 +499,7 @@ nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	sh:order 35;
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
 
-nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+nodes:758cb8ef-1a50-48ec-87ef-a72d1dbb3f80
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
 	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
@@ -505,7 +507,7 @@ nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	sh:order 36;
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
 
-nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
+nodes:0165c62f-69a9-4ca6-9a55-8ceaa9889108
 	 a form:Field;
 	form:displayType displayTypes:defaultInput;
 	form:partOf nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd;
@@ -514,6 +516,182 @@ nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7
 	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
 
 ####################################################
+
+# Identiteit van de veiligheidscoordinator
+
+nodes:f063c141-f63e-4b26-9b56-263bebd8b9e8
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "Naam";
+	sh:order 38;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:9f32ccaa-434e-4913-a61f-7322c4ed9d21
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "Voornaam";
+	sh:order 39;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:d2fd5a9a-3c73-4dfa-a54b-b7cca8171581
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "Adres";
+	sh:order 40;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:ddd695c9-3347-46e6-95ae-92ac34a81bb8
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "Postcode";
+	sh:order 41;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:06f35c65-1708-4d22-85a8-8b2e5c61c708
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "Rijksregisternummer";
+	sh:order 42;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:f6da3eae-6f5a-4f45-bdda-747a40db409e
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "Telefoonnummer";
+	sh:order 43;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:cf8b2ea1-84c4-4a30-bb49-86e0016f0502
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "GSM-nummer";
+	sh:order 44;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+nodes:be254887-6e21-4af3-b885-f3243749266a
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:938f372b-25a9-474c-b392-4768f2b6bb28;
+	sh:name "E-mailadres";
+	sh:order 45;
+	sh:path nodes:f2c0f7a3-731f-4355-ae1a-b6f26d1c927a.
+
+####################################################
+
+#	Bevoorradingszone
+
+nodes:daf464ab-de1e-4440-8478-b219dc7f10a8
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
+	sh:name "Begin bevoorradingszone";
+	sh:order 1;
+	sh:path nodes:6f5b0c21-15e3-4fb9-b3e1-5907062d0ee4 .
+
+nodes:5f58d7b4-86f8-4b52-aff1-9591c3bd422c
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
+	sh:name "Einde bevoorradingszone";
+	sh:order 2;
+	sh:path nodes:c00cf9d0-8fca-403a-b824-e59fcfe9f535 .
+
+nodes:8840a994-fd8a-4933-bddd-99b3dcc73efb
+	 a form:Generator;
+	form:prototype nodes:f2baa43c-9741-49c6-93c9-ce68f8a7ae6f.
+
+
+nodes:a8277ebb-38c7-4e41-9388-6642e9a485ec
+	 a form:Scope;
+	sh:path nodes:065f1d7f-8ddc-482a-96d0-607be9336a06 .
+
+nodes:b71e037c-7e51-41ea-97f4-e9d34f0b327d
+	 a form:Listing,
+	form:ListingTable;
+	form:addLabel "Voeg een bevoorradingszone toe";
+	form:canAdd true;
+	form:canRemove true;
+	form:createGenerator nodes:8840a994-fd8a-4933-bddd-99b3dcc73efb;
+	form:each nodes:c4f530f3-b7d7-41cb-8bae-26ef13f42101;
+	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
+	form:scope nodes:a8277ebb-38c7-4e41-9388-6642e9a485ec;
+	sh:name "Eenvoudige tabel";
+	sh:order 1 .
+
+nodes:c4f530f3-b7d7-41cb-8bae-26ef13f42101
+	 a form:SubForm;
+	form:includes nodes:5f58d7b4-86f8-4b52-aff1-9591c3bd422c, nodes:daf464ab-de1e-4440-8478-b219dc7f10a8;
+	form:removeLabel "Verwijder een bevoorradingszone";
+	sh:name "The subform title".
+
+nodes:c55e8760-8216-4d99-a235-260ea1a75a4d
+	 a form:Field.
+
+nodes:f2baa43c-9741-49c6-93c9-ce68f8a7ae6f
+	form:shape nodes:c55e8760-8216-4d99-a235-260ea1a75a4d.
+
+#####################################################
+
+#	Wegwerpzones nodes:8eb00a35-a69b-4826-84ac-f938032e88b0
+
+nodes:daf464ab-de1e-4440-8478-b219dc7f10a8
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
+	sh:name "Begin bevoorradingszone";
+	sh:order 1;
+	sh:path nodes:6f5b0c21-15e3-4fb9-b3e1-5907062d0ee4 .
+
+nodes:5f58d7b4-86f8-4b52-aff1-9591c3bd422c
+	 a form:Field;
+	form:displayType displayTypes:defaultInput;
+	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
+	sh:name "Einde bevoorradingszone";
+	sh:order 2;
+	sh:path nodes:c00cf9d0-8fca-403a-b824-e59fcfe9f535 .
+
+nodes:8840a994-fd8a-4933-bddd-99b3dcc73efb
+	 a form:Generator;
+	form:prototype nodes:f2baa43c-9741-49c6-93c9-ce68f8a7ae6f.
+
+
+nodes:a8277ebb-38c7-4e41-9388-6642e9a485ec
+	 a form:Scope;
+	sh:path nodes:065f1d7f-8ddc-482a-96d0-607be9336a06 .
+
+nodes:b71e037c-7e51-41ea-97f4-e9d34f0b327d
+	 a form:Listing,
+	form:ListingTable;
+	form:addLabel "Voeg een bevoorradingszone toe";
+	form:canAdd true;
+	form:canRemove true;
+	form:createGenerator nodes:8840a994-fd8a-4933-bddd-99b3dcc73efb;
+	form:each nodes:c4f530f3-b7d7-41cb-8bae-26ef13f42101;
+	form:partOf nodes:26a989c2-701e-442a-9e9e-ba27460c8fea;
+	form:scope nodes:a8277ebb-38c7-4e41-9388-6642e9a485ec;
+	sh:name "Eenvoudige tabel";
+	sh:order 1 .
+
+nodes:c4f530f3-b7d7-41cb-8bae-26ef13f42101
+	 a form:SubForm;
+	form:includes nodes:5f58d7b4-86f8-4b52-aff1-9591c3bd422c, nodes:daf464ab-de1e-4440-8478-b219dc7f10a8;
+	form:removeLabel "Verwijder een bevoorradingszone";
+	sh:name "The subform title".
+
+nodes:c55e8760-8216-4d99-a235-260ea1a75a4d
+	 a form:Field.
+
+nodes:f2baa43c-9741-49c6-93c9-ce68f8a7ae6f
+	form:shape nodes:c55e8760-8216-4d99-a235-260ea1a75a4d.
+
+#####################################################
 
 nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5
 	 a form:Field;
@@ -634,7 +812,7 @@ nodes:fd835e03-b0e6-4299-9c8e-01bd4d527568
 emb:source-node
 	 a form:Form,
 	form:TopLevelForm;
-	form:includes nodes:09ec5fa6-a3bc-44f3-9bfd-209908bf271b, nodes:156bd508-907a-402e-a96f-75a9c099722f, nodes:21cb7992-4640-4249-bbb9-3535a079253a, nodes:24289e48-258f-4919-8c3e-5783a6acb4a4, nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec, nodes:294a1526-879d-41ff-8fc2-9638bd48b636, nodes:3a7c3f9c-020e-4e3e-8d36-bcdab2f97470, nodes:42843f22-74bf-4cfc-8e0c-be2792f56bf4, nodes:4513defa-3bd9-4d57-838d-c1c117a26d7b, nodes:57286c38-59c9-49de-b189-52b8fac105d8, nodes:61360e6d-79da-43e8-9465-a8f3d253fd9d, nodes:61688ef8-08f4-4247-a3dd-6e2c2b1bc59a, nodes:662bda41-b3cb-4845-a015-2294d45b5a54, nodes:6795b232-c6a0-468c-8e7e-ae5bf778662a, nodes:85da8c73-310e-4f29-81db-8641277dfd64, nodes:b0896b7c-ba4b-4910-9583-6164923a0be8, nodes:b45d92ca-10df-4283-bf84-b78daf25cd9b, nodes:c7b7cc2c-a854-47b4-8dcc-f1a3a6358a4d, nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7, nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5, nodes:d4c6cacc-233b-4d12-8233-be9e57fcb4b7,
+	form:includes nodes:b71e037c-7e51-41ea-97f4-e9d34f0b327d, nodes:f063c141-f63e-4b26-9b56-263bebd8b9e8, nodes:9f32ccaa-434e-4913-a61f-7322c4ed9d21, nodes:d2fd5a9a-3c73-4dfa-a54b-b7cca8171581, nodes:ddd695c9-3347-46e6-95ae-92ac34a81bb8, nodes:06f35c65-1708-4d22-85a8-8b2e5c61c708, nodes:f6da3eae-6f5a-4f45-bdda-747a40db409e, nodes:cf8b2ea1-84c4-4a30-bb49-86e0016f0502, nodes:be254887-6e21-4af3-b885-f3243749266a, nodes:cc39c581-1a3c-443d-8e34-4a90ec20c81e, nodes:f2a5f626-e50e-41fb-806d-e5f6b5eb2a12, nodes:8059b441-aeb7-4811-a871-e9b538e83004, nodes:8182e7a7-b8e9-4069-b828-78e2833f8162, nodes:c43f5357-2d9e-47e0-a25f-5c2bd4d44631, nodes:758cb8ef-1a50-48ec-87ef-a72d1dbb3f80, nodes:0165c62f-69a9-4ca6-9a55-8ceaa9889108, nodes:6cd75ca1-a83d-4e73-949a-481021bece4b, nodes:350b24e9-8da4-4b6c-bc00-eabb7a46f25f, nodes:09ec5fa6-a3bc-44f3-9bfd-209908bf271b, nodes:156bd508-907a-402e-a96f-75a9c099722f, nodes:21cb7992-4640-4249-bbb9-3535a079253a, nodes:24289e48-258f-4919-8c3e-5783a6acb4a4, nodes:2572b45f-de2b-4b69-bb8a-da16ef75a1ec, nodes:294a1526-879d-41ff-8fc2-9638bd48b636, nodes:3a7c3f9c-020e-4e3e-8d36-bcdab2f97470, nodes:42843f22-74bf-4cfc-8e0c-be2792f56bf4, nodes:4513defa-3bd9-4d57-838d-c1c117a26d7b, nodes:57286c38-59c9-49de-b189-52b8fac105d8, nodes:61360e6d-79da-43e8-9465-a8f3d253fd9d, nodes:61688ef8-08f4-4247-a3dd-6e2c2b1bc59a, nodes:662bda41-b3cb-4845-a015-2294d45b5a54, nodes:6795b232-c6a0-468c-8e7e-ae5bf778662a, nodes:85da8c73-310e-4f29-81db-8641277dfd64, nodes:b0896b7c-ba4b-4910-9583-6164923a0be8, nodes:b45d92ca-10df-4283-bf84-b78daf25cd9b, nodes:c7b7cc2c-a854-47b4-8dcc-f1a3a6358a4d, nodes:cc19b6ec-5dd4-48fc-ba2a-5e5d6a3eb2a7, nodes:d26a1f5b-0f3a-4b4b-8279-3fceb27d5ca5, nodes:d4c6cacc-233b-4d12-8233-be9e57fcb4b7,
 nodes:d7db6004-8c14-40cc-9b78-caf61f533ad1, nodes:da6392e2-e639-4cb0-b9d0-bb95c4de6280, nodes:e2b66906-dae0-49e6-a3bf-22a1c5d55e1a, nodes:e81068b3-8fc4-4f3c-835f-4b077a145fb6, nodes:e9a8f4c8-bca8-485b-be8a-dfa19505bab9, nodes:ee1971f2-136b-4759-b556-abfab3f1743d, nodes:f6c81dda-e179-47c5-894d-4613d0b1e9bc, nodes:fd835e03-b0e6-4299-9c8e-01bd4d527568;
 	form:partOf nodes:08221725-7e94-4f16-80ec-279ce935bee8,
-	nodes:09652914-384e-4bd6-8de0-56a1d74f370f, nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd, nodes:0ff443be-6c35-47b2-8ff6-9fdbb197a2b4, nodes:8eb00a35-a69b-4826-84ac-f938032e88b0, nodes:b1133ef5-20aa-4e2a-a116-b8bf26cd1c5a, nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf, nodes:c11dda57-c224-4698-abd5-d1115ca240bf, nodes:f8f94a7c-28e1-4539-9c7f-25f1b050bfa7, nodes:3755eca2-15c2-4c2b-9c9d-a4e49da4c64d, nodes:26a989c2-701e-442a-9e9e-ba27460c8fea, nodes:7eccc7c5-fea6-4ad9-b805-39dd7be2e6dc, nodes:7fa3d672-47ef-4a51-b996-873023225f38, nodes:938f372b-25a9-474c-b392-4768f2b6bb28, nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1, nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e, nodes:f93a8e9b-1431-4493-973b-1981574d1b90 .
+	nodes:09652914-384e-4bd6-8de0-56a1d74f370f, nodes:26a989c2-701e-442a-9e9e-ba27460c8fea, nodes:0edc3470-818f-416e-b0f2-cfc7886c6ddd, nodes:0ff443be-6c35-47b2-8ff6-9fdbb197a2b4, nodes:8eb00a35-a69b-4826-84ac-f938032e88b0, nodes:b1133ef5-20aa-4e2a-a116-b8bf26cd1c5a, nodes:ff98fc4f-67f5-41f7-9831-60e0ff95c8cf, nodes:c11dda57-c224-4698-abd5-d1115ca240bf, nodes:f8f94a7c-28e1-4539-9c7f-25f1b050bfa7, nodes:3755eca2-15c2-4c2b-9c9d-a4e49da4c64d, nodes:26a989c2-701e-442a-9e9e-ba27460c8fea, nodes:7eccc7c5-fea6-4ad9-b805-39dd7be2e6dc, nodes:7fa3d672-47ef-4a51-b996-873023225f38, nodes:938f372b-25a9-474c-b392-4768f2b6bb28, nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1, nodes:e3553a22-2e8e-49e4-8585-ca20f1822e6e, nodes:f93a8e9b-1431-4493-973b-1981574d1b90 .
