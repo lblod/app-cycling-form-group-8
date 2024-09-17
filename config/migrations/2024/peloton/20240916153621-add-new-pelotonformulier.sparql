@@ -1,4 +1,3 @@
-
 PREFIX mobiliteit: <https://data.vlaanderen.be/ns/mobiliteit#>
 PREFIX lblodSubsidie: <http://lblod.data.gift/vocabularies/subsidie/>
 PREFIX dct: <http://purl.org/dc/terms/>
@@ -12,47 +11,47 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 
 INSERT DATA {
   GRAPH <http://mu.semte.ch/graphs/public>{
-    <http://lblod.data.info/id/subsidy-measure-offers/a2d920b2-d266-4555-b023-63632997c406>
+    <http://lblod.data.info/id/subsidy-measure-offers/d568b824-b531-4400-bf91-91dc2296be31>
       a <http://data.vlaanderen.be/ns/subsidie#SubsidiemaatregelAanbod>;
-      mu:uuid "a2d920b2-d266-4555-b023-63632997c406";
+      mu:uuid "d568b824-b531-4400-bf91-91dc2296be31";
       dct:title """Peloton""";
       skos:prefLabel """Peloton""";
       skos:related <https://nl.wikipedia.org/wiki/Peloton_(wielrennen)>;
-      cpsv:follows <http://data.lblod.info/id/subsidy-procedural-steps/42d5b4d0-458f-4dcc-93e0-9a6cfd44a6f0>;
-      lblodSubsidie:heeftReeks <http://lblod.data.info/id/subsidy-measure-offer-series/ec1c74eb-f62e-4c35-82d1-c79616471e3e>.
+      cpsv:follows <http://data.lblod.info/id/subsidy-procedural-steps/9fb8b3f3-12ef-47ef-a7cf-efbfdedba4cb>;
+      lblodSubsidie:heeftReeks <http://lblod.data.info/id/subsidy-measure-offer-series/605480ce-554e-4d80-b310-249366157674>.
 
-    <http://data.lblod.info/id/subsidy-procedural-steps/42d5b4d0-458f-4dcc-93e0-9a6cfd44a6f0> a subsidie:Subsidieprocedurestap;
-      mu:uuid "42d5b4d0-458f-4dcc-93e0-9a6cfd44a6f0";
+    <http://data.lblod.info/id/subsidy-procedural-steps/9fb8b3f3-12ef-47ef-a7cf-efbfdedba4cb> a subsidie:Subsidieprocedurestap;
+      mu:uuid "9fb8b3f3-12ef-47ef-a7cf-efbfdedba4cb";
       dct:description """Aanvraag""";
-      mobiliteit:periode <http://data.lblod.info/id/periodes/f455172d-3f27-45b1-b2ab-95f5c99d3a5f>.
+      mobiliteit:periode <http://data.lblod.info/id/periodes/d9ef7dd4-ae9b-43d4-b762-a31425fc45c9>.
 
-    <http://lblod.data.info/id/subsidy-measure-offer-series/ec1c74eb-f62e-4c35-82d1-c79616471e3e> a lblodSubsidie:SubsidiemaatregelAanbodReeks;
-      mu:uuid "ec1c74eb-f62e-4c35-82d1-c79616471e3e";
+    <http://lblod.data.info/id/subsidy-measure-offer-series/605480ce-554e-4d80-b310-249366157674> a lblodSubsidie:SubsidiemaatregelAanbodReeks;
+      mu:uuid "605480ce-554e-4d80-b310-249366157674";
       dct:title "Oproep 2024"@nl;
       dct:description "01/01/2024 — 01/01/2028"@nl ;
-      common:active <http://lblod.data.info/id/subsidie-application-flows/ba31009e-21ec-4ad1-89d7-f18dfd7e3890> ;
-      mobiliteit:periode <http://data.lblod.info/id/periodes/111b848b-0590-42f2-a659-c91a9a5f7a0b> ;
-      lblodSubsidie:heeftSubsidieprocedurestap <http://data.lblod.info/id/subsidy-procedural-steps/42d5b4d0-458f-4dcc-93e0-9a6cfd44a6f0>.
+      common:active <http://lblod.data.info/id/subsidie-application-flows/18876ca3-4cab-4598-9054-d6a705b2a5fb> ;
+      mobiliteit:periode <http://data.lblod.info/id/periodes/00dbd6ca-7a41-4c17-ac59-b2252936270d> ;
+      lblodSubsidie:heeftSubsidieprocedurestap <http://data.lblod.info/id/subsidy-procedural-steps/9fb8b3f3-12ef-47ef-a7cf-efbfdedba4cb>.
 
-    <http://lblod.data.info/id/subsidie-application-flows/ba31009e-21ec-4ad1-89d7-f18dfd7e3890> a lblodSubsidie:ApplicationFlow;
-      mu:uuid "ba31009e-21ec-4ad1-89d7-f18dfd7e3890";
-      xkos:belongsTo <http://lblod.data.info/id/subsidy-measure-offer-series/ec1c74eb-f62e-4c35-82d1-c79616471e3e>;
-      xkos:next <http://lblod.data.info/id/subsidie-application-flow-steps/c6d7a8d4-dc51-48f1-9d44-507f8cc02c85>.
+    <http://lblod.data.info/id/subsidie-application-flows/18876ca3-4cab-4598-9054-d6a705b2a5fb> a lblodSubsidie:ApplicationFlow;
+      mu:uuid "18876ca3-4cab-4598-9054-d6a705b2a5fb";
+      xkos:belongsTo <http://lblod.data.info/id/subsidy-measure-offer-series/605480ce-554e-4d80-b310-249366157674>;
+      xkos:next <http://lblod.data.info/id/subsidie-application-flow-steps/1e94f1ba-9636-4174-99a4-c0750f806b19>.
 
-    <http://lblod.data.info/id/subsidie-application-flow-steps/c6d7a8d4-dc51-48f1-9d44-507f8cc02c85> a lblodSubsidie:ApplicationStep;
-      mu:uuid "c6d7a8d4-dc51-48f1-9d44-507f8cc02c85";
+    <http://lblod.data.info/id/subsidie-application-flow-steps/1e94f1ba-9636-4174-99a4-c0750f806b19> a lblodSubsidie:ApplicationStep;
+      mu:uuid "1e94f1ba-9636-4174-99a4-c0750f806b19";
       qb:order 0;
-      dct:references <http://data.lblod.info/id/subsidy-procedural-steps/42d5b4d0-458f-4dcc-93e0-9a6cfd44a6f0>;
-      dct:isPartOf <http://lblod.data.info/id/subsidie-application-flows/ba31009e-21ec-4ad1-89d7-f18dfd7e3890>;
+      dct:references <http://data.lblod.info/id/subsidy-procedural-steps/9fb8b3f3-12ef-47ef-a7cf-efbfdedba4cb>;
+      dct:isPartOf <http://lblod.data.info/id/subsidie-application-flows/18876ca3-4cab-4598-9054-d6a705b2a5fb>;
       dct:source <config://forms/peloton/aanvraag/versions/20240916154447/form.ttl>.
 
-    <http://data.lblod.info/id/periodes/111b848b-0590-42f2-a659-c91a9a5f7a0b> a <http://data.europa.eu/m8g/PeriodOfTime>;
-      mu:uuid "111b848b-0590-42f2-a659-c91a9a5f7a0b";
+    <http://data.lblod.info/id/periodes/00dbd6ca-7a41-4c17-ac59-b2252936270d> a <http://data.europa.eu/m8g/PeriodOfTime>;
+      mu:uuid "00dbd6ca-7a41-4c17-ac59-b2252936270d";
       <http://data.europa.eu/m8g/startTime> "2024-01-01T03:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
       <http://data.europa.eu/m8g/endTime> "2028-01-01T21:59:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
 
-    <http://data.lblod.info/id/periodes/f455172d-3f27-45b1-b2ab-95f5c99d3a5f> a <http://data.europa.eu/m8g/PeriodOfTime>;
-      mu:uuid "f455172d-3f27-45b1-b2ab-95f5c99d3a5f";
+    <http://data.lblod.info/id/periodes/d9ef7dd4-ae9b-43d4-b762-a31425fc45c9> a <http://data.europa.eu/m8g/PeriodOfTime>;
+      mu:uuid "d9ef7dd4-ae9b-43d4-b762-a31425fc45c9";
       <http://data.europa.eu/m8g/startTime> "2024-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
       <http://data.europa.eu/m8g/endTime> "2028-01-01T21:59:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
   }
