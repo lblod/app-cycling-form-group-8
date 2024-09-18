@@ -132,3 +132,9 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  gpx:
+    image: lblod/gpx-group-8:latest
+    volumes:
+      - ./data/files:/share
+    restart: always
+    logging: *default-logging
