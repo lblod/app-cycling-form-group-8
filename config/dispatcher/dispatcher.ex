@@ -212,11 +212,11 @@ defmodule Dispatcher do
 
   # HACK FOR HACKATHON ONLY
 # this should go to database:8890 (and thus hitting the authorization layer
-# but since the form-service doesn't use mu-auth, it's too much work to expose 
+# but since the form-service doesn't use mu-auth, it's too much work to expose
 # the bits we need in the allotted time
 # realistically, there'd be a separate service to expose the specific triples
 # that were public after the form was submitted
-# match "/raw-sparql" do
+  match "/raw-sparql" do
     forward conn, [], "http://virtuoso:8890/sparql"
   end
   #################################################################
