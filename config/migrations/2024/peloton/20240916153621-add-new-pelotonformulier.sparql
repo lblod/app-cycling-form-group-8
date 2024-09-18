@@ -23,7 +23,7 @@ INSERT DATA {
     <http://data.lblod.info/id/subsidy-procedural-steps/9fb8b3f3-12ef-47ef-a7cf-efbfdedba4cb> a subsidie:Subsidieprocedurestap;
       mu:uuid "9fb8b3f3-12ef-47ef-a7cf-efbfdedba4cb";
       dct:description """Aanvraag""";
-      mobiliteit:periode <http://data.lblod.info/id/periodes/d9ef7dd4-ae9b-43d4-b762-a31425fc45c9>.
+      mobiliteit:periode <http://data.lblod.info/id/periodes/00dbd6ca-7a41-4c17-ac59-b2252936270d>.
 
     <http://lblod.data.info/id/subsidy-measure-offer-series/605480ce-554e-4d80-b310-249366157674> a lblodSubsidie:SubsidiemaatregelAanbodReeks;
       mu:uuid "605480ce-554e-4d80-b310-249366157674";
@@ -48,11 +48,6 @@ INSERT DATA {
     <http://data.lblod.info/id/periodes/00dbd6ca-7a41-4c17-ac59-b2252936270d> a <http://data.europa.eu/m8g/PeriodOfTime>;
       mu:uuid "00dbd6ca-7a41-4c17-ac59-b2252936270d";
       <http://data.europa.eu/m8g/startTime> "2024-01-01T03:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
-      <http://data.europa.eu/m8g/endTime> "2028-01-01T21:59:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
-
-    <http://data.lblod.info/id/periodes/d9ef7dd4-ae9b-43d4-b762-a31425fc45c9> a <http://data.europa.eu/m8g/PeriodOfTime>;
-      mu:uuid "d9ef7dd4-ae9b-43d4-b762-a31425fc45c9";
-      <http://data.europa.eu/m8g/startTime> "2024-01-01T00:00:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
       <http://data.europa.eu/m8g/endTime> "2028-01-01T21:59:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>.
   }
 }
