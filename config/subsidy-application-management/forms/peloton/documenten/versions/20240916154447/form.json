@@ -1,0 +1,14 @@
+{
+  "source": {
+    "prefixes": [
+      "PREFIX form: <http://lblod.data.gift/vocabularies/forms/>",
+      "PREFIX sh: <http://www.w3.org/ns/shacl#>",
+      "PREFIX displayTypes: <http://lblod.data.gift/display-types/>",
+      "PREFIX nodes: <http://data.lblod.info/form-data/nodes/>",
+      "PREFIX emb: <http://ember-submission-form-fields/>"
+    ],
+    "properties": [
+     
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+@prefix : <#>.
+@prefix form: <http://lblod.data.gift/vocabularies/forms/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix displayTypes: <http://lblod.data.gift/display-types/>.
+@prefix nodes: <http://data.lblod.info/form-data/nodes/>.
+@prefix emb: <http://ember-submission-form-fields/>.
+
+
+nodes:documenten
+	 a form:Field;
+	form:displayType displayTypes:documenten;
+	form:help """Ik heb de route nagekeken en ga akkoord met de prijzen van gemeenten die de route doorkruist.""";
+	form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
+  form:validatedBy [
+      a form:RequiredConstraint;
+      form:grouping form:Bag;
+      sh:order 1;
+      sh:path nodes:4d0a5b7a-1045-4a73-8977-59d3dede7605;
+      sh:resultMessage "Dit veld is verplicht."@nl ];
+	sh:name "Bevestig";
+	sh:order 17;
+	sh:path nodes:4d0a5b7a-1045-4a73-8977-59d3dede7605 .
+
+
+nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1
+a form:Section; sh:name "Documenten"; sh:order 1 .
+emb:source-node
+    a form:Form, form:TopLevelForm;
+    form:includes nodes:documenten;
+    form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1 .
