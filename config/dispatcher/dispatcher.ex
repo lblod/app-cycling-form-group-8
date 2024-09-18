@@ -198,7 +198,7 @@ defmodule Dispatcher do
   #   forward conn, [], "http://sparql-cache/sparql"
   # end
 
-  match "/raw-sparql", %{ layer: :api, accept: %{ sparql: true } } do
+  match "/raw-sparql" do
     forward conn, [], "http://database:8890/sparql"
   end
   #################################################################
