@@ -12,6 +12,10 @@ defmodule Dispatcher do
   #   forward conn, path, "http://resource/themes/"
   # end
 
+  match "/assets/*path" do
+    forward conn, path, "http://frontend/assets/"
+  end
+
   match "/organizations/*path" do
     forward conn, path, "http://cache/organizations/"
   end
