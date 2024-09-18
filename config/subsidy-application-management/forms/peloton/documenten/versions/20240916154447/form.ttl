@@ -11,12 +11,6 @@ nodes:documenten
 	form:displayType displayTypes:documenten;
 	form:help """Ik heb de route nagekeken en ga akkoord met de prijzen van gemeenten die de route doorkruist.""";
 	form:partOf nodes:d7b33768-3723-4291-a7be-3d8a7d7cdbc1;
-  form:validatedBy [
-      a form:RequiredConstraint;
-      form:grouping form:Bag;
-      sh:order 1;
-      sh:path nodes:4d0a5b7a-1045-4a73-8977-59d3dede7605;
-      sh:resultMessage "Dit veld is verplicht."@nl ];
 	sh:name "Bevestig";
 	sh:order 17;
 	sh:path nodes:4d0a5b7a-1045-4a73-8977-59d3dede7605 .
